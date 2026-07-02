@@ -623,9 +623,18 @@
                     if (el.tagName === 'IMG') {
                         currentSrc = el.src;
                     } else {
-                        const bgStyle = el.style.backgroundImage;
-                        if (bgStyle) {
-                            currentSrc = bgStyle.replace(/url\(['"]?(.*?)['"]?\)/i, '$1');
+                        const innerImg = el.querySelector('img');
+                        if (innerImg) {
+                            currentSrc = innerImg.src;
+                        } else {
+                            let bgStyle = el.style.backgroundImage;
+                            if (!bgStyle) {
+                                const childWithBg = el.querySelector('[style*="background-image"]');
+                                if (childWithBg) bgStyle = childWithBg.style.backgroundImage;
+                            }
+                            if (bgStyle) {
+                                currentSrc = bgStyle.replace(/url\(['"]?(.*?)['"]?\)/i, '$1');
+                            }
                         }
                     }
 
@@ -690,7 +699,12 @@
                             if (activeEditableElement.tagName === 'IMG') {
                                 activeEditableElement.src = res.value;
                             } else {
-                                activeEditableElement.style.backgroundImage = `url(${res.value})`;
+                                const childWithBg = activeEditableElement.querySelector('[style*="background-image"]');
+                                if (childWithBg) {
+                                    childWithBg.style.backgroundImage = `url(${res.value})`;
+                                } else {
+                                    activeEditableElement.style.backgroundImage = `url(${res.value})`;
+                                }
                             }
                         } else {
                             activeEditableElement.innerText = res.value;

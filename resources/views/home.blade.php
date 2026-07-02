@@ -5,26 +5,46 @@
 @section('content')
 <!-- Glassmorphic Hero Carousel Section -->
 <section class="relative h-[90vh] w-full overflow-hidden">
+    <!-- Admin Floating Edit Slide Controls -->
+    @if(auth()->check())
+        <div class="absolute top-24 right-6 z-30 flex flex-col gap-2">
+            <button onclick="openInlineEditor(document.getElementById('slide-edit-1'))" class="bg-secondary text-white px-4 py-2.5 rounded-xl shadow-lg hover:scale-105 transition-transform flex items-center gap-2 font-label-caps text-xs uppercase font-bold">
+                <span class="material-symbols-outlined text-sm">photo_camera</span> Edit Slide 1
+            </button>
+            <button onclick="openInlineEditor(document.getElementById('slide-edit-2'))" class="bg-secondary text-white px-4 py-2.5 rounded-xl shadow-lg hover:scale-105 transition-transform flex items-center gap-2 font-label-caps text-xs uppercase font-bold">
+                <span class="material-symbols-outlined text-sm">photo_camera</span> Edit Slide 2
+            </button>
+            <button onclick="openInlineEditor(document.getElementById('slide-edit-3'))" class="bg-secondary text-white px-4 py-2.5 rounded-xl shadow-lg hover:scale-105 transition-transform flex items-center gap-2 font-label-caps text-xs uppercase font-bold">
+                <span class="material-symbols-outlined text-sm">photo_camera</span> Edit Slide 3
+            </button>
+        </div>
+        
+        <!-- Hidden trigger hooks to pass parameters to the inline editor drawer -->
+        <div id="slide-edit-1" class="hidden" data-page="home" data-section="hero" data-key="image_1" data-type="image" data-label="Hero Slide 1 Image"></div>
+        <div id="slide-edit-2" class="hidden" data-page="home" data-section="hero" data-key="image_2" data-type="image" data-label="Hero Slide 2 Image"></div>
+        <div id="slide-edit-3" class="hidden" data-page="home" data-section="hero" data-key="image_3" data-type="image" data-label="Hero Slide 3 Image"></div>
+    @endif
+
     <!-- Slides Container -->
     <div id="hero-slider" class="absolute inset-0">
         <!-- Slide 1: Medical Camp -->
-        <div class="hero-slide absolute inset-0 opacity-100 transition-opacity duration-1000">
-            <div class="absolute inset-0 bg-black/40 z-10"></div>
-            <div class="w-full h-full bg-cover bg-center" style="background-image: url('{{ \App\Helpers\ContentHelper::get('home', 'hero', 'image_1', 'https://lh3.googleusercontent.com/aida-public/AB6AXuCNYt5H_fmaIDredC2R_u6F8nT668rWXFFPbninZkyaJcWRGU6wHp5TbL4f-87pClHNYbbg2rxnfJ4cdy4_xqL4Ydhpi1XDEnSdhEYrPzAEWM06vkkENc08rQo247H0egdmjZFG_Q5UMGNn355Um0b0IG3oi3KcnZjMyV0hkROgwNps3hLQaMlaJ9ns8dtWArT8RKUHEeJulOrrz2F864yknlemMLJQolzWk9U_cO8fidC68uv0A0GS') }}')" {!! \App\Helpers\ContentHelper::editable('home', 'hero', 'image_1', 'image', 'Hero Slide 1 Image') !!}></div>
+        <div class="hero-slide absolute inset-0 opacity-100 transition-opacity duration-1000" {!! \App\Helpers\ContentHelper::editable('home', 'hero', 'image_1', 'image', 'Hero Slide 1 Image') !!}>
+            <div class="absolute inset-0 bg-black/40 z-10 pointer-events-none"></div>
+            <div class="w-full h-full bg-cover bg-center" style="background-image: url('{{ \App\Helpers\ContentHelper::get('home', 'hero', 'image_1', 'https://lh3.googleusercontent.com/aida-public/AB6AXuCNYt5H_fmaIDredC2R_u6F8nT668rWXFFPbninZkyaJcWRGU6wHp5TbL4f-87pClHNYbbg2rxnfJ4cdy4_xqL4Ydhpi1XDEnSdhEYrPzAEWM06vkkENc08rQo247H0egdmjZFG_Q5UMGNn355Um0b0IG3oi3KcnZjMyV0hkROgwNps3hLQaMlaJ9ns8dtWArT8RKUHEeJulOrrz2F864yknlemMLJQolzWk9U_cO8fidC68uv0A0GS') }}')"></div>
         </div>
         <!-- Slide 2: Children Learning -->
-        <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000">
-            <div class="absolute inset-0 bg-black/40 z-10"></div>
-            <div class="w-full h-full bg-cover bg-center" style="background-image: url('{{ \App\Helpers\ContentHelper::get('home', 'hero', 'image_2', 'https://lh3.googleusercontent.com/aida-public/AB6AXuAwkvnmMOCrxQOKH5ikxM3633PEI00ps2f_8R9tM8iA_7KRvRM4Fj4WbZHYiSxcSZbWEVceKhwRd7Sj3vryEKS35UDdojjGMSAz-cs8zA2OxAhoLgH3VgFiLQKJvcWRymAjq2TIT-jf-hAFz_y2DNSep9QzpSLxVVJE4eJYkr47H3mr5gSMTkZdtKpNl8xNt080fJJ7PzzBZJ-AZYJLpFlFuxFQeZJBlbatsRVIce2dLRuebbqNZWkb') }}')" {!! \App\Helpers\ContentHelper::editable('home', 'hero', 'image_2', 'image', 'Hero Slide 2 Image') !!}></div>
+        <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000" {!! \App\Helpers\ContentHelper::editable('home', 'hero', 'image_2', 'image', 'Hero Slide 2 Image') !!}>
+            <div class="absolute inset-0 bg-black/40 z-10 pointer-events-none"></div>
+            <div class="w-full h-full bg-cover bg-center" style="background-image: url('{{ \App\Helpers\ContentHelper::get('home', 'hero', 'image_2', 'https://lh3.googleusercontent.com/aida-public/AB6AXuAwkvnmMOCrxQOKH5ikxM3633PEI00ps2f_8R9tM8iA_7KRvRM4Fj4WbZHYiSxcSZbWEVceKhwRd7Sj3vryEKS35UDdojjGMSAz-cs8zA2OxAhoLgH3VgFiLQKJvcWRymAjq2TIT-jf-hAFz_y2DNSep9QzpSLxVVJE4eJYkr47H3mr5gSMTkZdtKpNl8xNt080fJJ7PzzBZJ-AZYJLpFlFuxFQeZJBlbatsRVIce2dLRuebbqNZWkb') }}')"></div>
         </div>
         <!-- Slide 3: Volunteer & Animals -->
-        <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000">
-            <div class="absolute inset-0 bg-black/40 z-10"></div>
-            <div class="w-full h-full bg-cover bg-center" style="background-image: url('{{ \App\Helpers\ContentHelper::get('home', 'hero', 'image_3', 'https://lh3.googleusercontent.com/aida-public/AB6AXuCNYt5H_fmaIDredC2R_u6F8nT668rWXFFPbninZkyaJcWRGU6wHp5TbL4f-87pClHNYbbg2rxnfJ4cdy4_xqL4Ydhpi1XDEnSdhEYrPzAEWM06vkkENc08rQo247H0egdmjZFG_Q5UMGNn355Um0b0IG3oi3KcnZjMyV0hkROgwNps3hLQaMlaJ9ns8dtWArT8RKUHEeJulOrrz2F864yknlemMLJQolzWk9U_cO8fidC68uv0A0GS') }}')" {!! \App\Helpers\ContentHelper::editable('home', 'hero', 'image_3', 'image', 'Hero Slide 3 Image') !!}></div>
+        <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000" {!! \App\Helpers\ContentHelper::editable('home', 'hero', 'image_3', 'image', 'Hero Slide 3 Image') !!}>
+            <div class="absolute inset-0 bg-black/40 z-10 pointer-events-none"></div>
+            <div class="w-full h-full bg-cover bg-center" style="background-image: url('{{ \App\Helpers\ContentHelper::get('home', 'hero', 'image_3', 'https://lh3.googleusercontent.com/aida-public/AB6AXuCNYt5H_fmaIDredC2R_u6F8nT668rWXFFPbninZkyaJcWRGU6wHp5TbL4f-87pClHNYbbg2rxnfJ4cdy4_xqL4Ydhpi1XDEnSdhEYrPzAEWM06vkkENc08rQo247H0egdmjZFG_Q5UMGNn355Um0b0IG3oi3KcnZjMyV0hkROgwNps3hLQaMlaJ9ns8dtWArT8RKUHEeJulOrrz2F864yknlemMLJQolzWk9U_cO8fidC68uv0A0GS') }}')"></div>
         </div>
     </div>
-    <div class="relative z-20 h-full flex flex-col justify-center items-center text-center px-margin-mobile">
-        <div class="max-w-4xl">
+    <div class="relative z-20 h-full flex flex-col justify-center items-center text-center px-margin-mobile pointer-events-none">
+        <div class="max-w-4xl pointer-events-auto">
             <h1 class="font-display-xl text-3xl md:text-display-xl text-white mb-8 leading-tight transition-all duration-700 opacity-0 transform translate-y-10 text-glow" id="animated-headline">
                 <span {!! \App\Helpers\ContentHelper::editable('home', 'hero', 'title', 'text', 'Hero Title Line') !!}>{{ \App\Helpers\ContentHelper::get('home', 'hero', 'title', 'SERVING HUMANITY. PROTECTING ANIMALS. SAFEGUARDING THE EARTH.') }}</span>
             </h1>
