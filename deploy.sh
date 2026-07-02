@@ -11,11 +11,6 @@ git pull origin main
 echo "📦 Installing PHP dependencies..."
 composer install --no-interaction --prefer-dist --optimize-autoloader --no-dev
 
-# 3. Install NPM dependencies and build Vite assets for production
-echo "🎨 Compiling frontend assets..."
-npm install
-npm run build
-
 # 4. Run database migrations
 echo "🗄️ Running migrations..."
 php artisan migrate --force
