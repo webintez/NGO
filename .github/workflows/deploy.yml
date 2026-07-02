@@ -1,0 +1,72 @@
+name: Laravel CI/CD Deployment Workflow
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  laravel-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.2'
+        extensions: mbstring, xml, ctype, iconv, mysql, sqlite
+    - uses: actions/checkout@v4
+
+    - name: Copy .env
+      run: php -r "file_exists('.env') || copy('.env.example', '.env');"
+
+    - name: Install Composer Dependencies
+      run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+
+    - name: Setup Directory Permissions
+      run: chmod -R 777 storage bootstrap/cache
+
+    - name: Create SQLite Database
+      run: |
+        mkdir -p database
+        touch database/database.sqlite
+
+    - name: Compile Assets (Vite)
+      run: |
+        npm install
+        npm run build
+
+    - name: Run Database Migrations
+      run: php artisan migrate --force
+
+    - name: Run Test Suite
+      run: php artisan test
+
+  # Example deployment job (can be customized with SSH secrets)
+  deploy:
+    needs: laravel-tests
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Deploy to Server via SSH
+      # Uncomment and configure with your SSH credentials in GitHub Secrets if needed:
+      # uses: appleboy/ssh-action@master
+      # with:
+      #   host: ${{ secrets.SSH_HOST }}
+      #   username: ${{ secrets.SSH_USERNAME }}
+      #   key: ${{ secrets.SSH_PRIVATE_KEY }}
+      #   port: ${{ secrets.SSH_PORT }}
+      #   script: |
+      #     cd /path/to/your/laravel/project
+      #     git pull origin main
+      #     composer install --no-interaction --prefer-dist --optimize-autoloader
+      #     php artisan migrate --force
+      #     php artisan config:cache
+      #     php artisan route:cache
+      #     php artisan view:cache
+      #     npm install
+      #     npm run build
+      run: echo "Ready for SSH deployment step!"
