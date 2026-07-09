@@ -26,34 +26,34 @@
     <section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-24">
         
         <!-- Cause Selection Tabs -->
-        <div class="flex overflow-x-auto gap-4 mb-12 justify-start md:justify-center pb-2 scrollbar-none" id="cause-tabs">
-            <button class="cause-tab glass-card px-6 py-4 rounded-xl flex items-center gap-3 border-2 border-secondary transition-all hover:border-secondary active:scale-95 text-primary flex-shrink-0" data-tab="animal" onclick="switchTab('animal')">
-                <span class="material-symbols-outlined">pets</span>
-                <span class="font-title-md text-sm font-bold">Animal Rescue</span>
+        <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-4 mb-12" id="cause-tabs">
+            <button class="cause-tab glass-card p-4 rounded-xl flex flex-col items-center justify-center gap-2 border-2 border-secondary transition-all hover:border-secondary active:scale-95 text-primary text-center" data-tab="animal" onclick="switchTab('animal')">
+                <span class="material-symbols-outlined text-2xl">pets</span>
+                <span class="font-title-md text-xs font-bold leading-tight">Animal Rescue</span>
             </button>
-            <button class="cause-tab glass-card px-6 py-4 rounded-xl flex items-center gap-3 border-2 border-transparent transition-all hover:border-secondary active:scale-95 text-primary opacity-60 flex-shrink-0" data-tab="health" onclick="switchTab('health')">
-                <span class="material-symbols-outlined">medical_services</span>
-                <span class="font-title-md text-sm font-bold">Health Camps</span>
+            <button class="cause-tab glass-card p-4 rounded-xl flex flex-col items-center justify-center gap-2 border-2 border-transparent transition-all hover:border-secondary active:scale-95 text-primary opacity-60 text-center" data-tab="health" onclick="switchTab('health')">
+                <span class="material-symbols-outlined text-2xl">medical_services</span>
+                <span class="font-title-md text-xs font-bold leading-tight">Health Camps</span>
             </button>
-            <button class="cause-tab glass-card px-6 py-4 rounded-xl flex items-center gap-3 border-2 border-transparent transition-all hover:border-secondary active:scale-95 text-primary opacity-60 flex-shrink-0" data-tab="child" onclick="switchTab('child')">
-                <span class="material-symbols-outlined">child_care</span>
-                <span class="font-title-md text-sm font-bold">Child Education</span>
+            <button class="cause-tab glass-card p-4 rounded-xl flex flex-col items-center justify-center gap-2 border-2 border-transparent transition-all hover:border-secondary active:scale-95 text-primary opacity-60 text-center" data-tab="child" onclick="switchTab('child')">
+                <span class="material-symbols-outlined text-2xl">child_care</span>
+                <span class="font-title-md text-xs font-bold leading-tight">Child Education</span>
             </button>
-            <button class="cause-tab glass-card px-6 py-4 rounded-xl flex items-center gap-3 border-2 border-transparent transition-all hover:border-secondary active:scale-95 text-primary opacity-60 flex-shrink-0" data-tab="adult" onclick="switchTab('adult')">
-                <span class="material-symbols-outlined">person</span>
-                <span class="font-title-md text-sm font-bold">Adult Literacy</span>
+            <button class="cause-tab glass-card p-4 rounded-xl flex flex-col items-center justify-center gap-2 border-2 border-transparent transition-all hover:border-secondary active:scale-95 text-primary opacity-60 text-center" data-tab="adult" onclick="switchTab('adult')">
+                <span class="material-symbols-outlined text-2xl">person</span>
+                <span class="font-title-md text-xs font-bold leading-tight">Adult Literacy</span>
             </button>
-            <button class="cause-tab glass-card px-6 py-4 rounded-xl flex items-center gap-3 border-2 border-transparent transition-all hover:border-secondary active:scale-95 text-primary opacity-60 flex-shrink-0" data-tab="wildlife" onclick="switchTab('wildlife')">
-                <span class="material-symbols-outlined">nature_people</span>
-                <span class="font-title-md text-sm font-bold">Wildlife Conservation</span>
+            <button class="cause-tab glass-card p-4 rounded-xl flex flex-col items-center justify-center gap-2 border-2 border-transparent transition-all hover:border-secondary active:scale-95 text-primary opacity-60 text-center" data-tab="wildlife" onclick="switchTab('wildlife')">
+                <span class="material-symbols-outlined text-2xl">nature_people</span>
+                <span class="font-title-md text-xs font-bold leading-tight">Wildlife Conservation</span>
             </button>
-            <button class="cause-tab glass-card px-6 py-4 rounded-xl flex items-center gap-3 border-2 border-transparent transition-all hover:border-secondary active:scale-95 text-primary opacity-60 flex-shrink-0" data-tab="art" onclick="switchTab('art')">
-                <span class="material-symbols-outlined">palette</span>
-                <span class="font-title-md text-sm font-bold">Support Artisans</span>
+            <button class="cause-tab glass-card p-4 rounded-xl flex flex-col items-center justify-center gap-2 border-2 border-transparent transition-all hover:border-secondary active:scale-95 text-primary opacity-60 text-center" data-tab="art" onclick="switchTab('art')">
+                <span class="material-symbols-outlined text-2xl">palette</span>
+                <span class="font-title-md text-xs font-bold leading-tight">Support Artisans</span>
             </button>
-            <button class="cause-tab glass-card px-6 py-4 rounded-xl flex items-center gap-3 border-2 border-transparent transition-all hover:border-secondary active:scale-95 text-primary opacity-60 flex-shrink-0" data-tab="climate" onclick="switchTab('climate')">
-                <span class="material-symbols-outlined">eco</span>
-                <span class="font-title-md text-sm font-bold">Climate Awareness</span>
+            <button class="cause-tab glass-card p-4 rounded-xl flex flex-col items-center justify-center gap-2 border-2 border-transparent transition-all hover:border-secondary active:scale-95 text-primary opacity-60 text-center" data-tab="climate" onclick="switchTab('climate')">
+                <span class="material-symbols-outlined text-2xl">eco</span>
+                <span class="font-title-md text-xs font-bold leading-tight">Climate Awareness</span>
             </button>
         </div>
 
