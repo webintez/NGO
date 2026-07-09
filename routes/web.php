@@ -15,8 +15,8 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
 
-Route::get('/donation', [DonationController::class, 'index'])->name('donation');
-Route::post('/donation', [DonationController::class, 'store'])->name('donation.store');
+Route::get('/support-us', [DonationController::class, 'index'])->name('donation');
+Route::post('/support-us', [DonationController::class, 'store'])->name('donation.store');
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
