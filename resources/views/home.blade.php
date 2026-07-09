@@ -41,40 +41,33 @@
         <div class="hero-slide absolute inset-0 opacity-100 transition-opacity duration-1000" 
              data-title="{{ \App\Helpers\ContentHelper::get('home', 'hero', 'title_1', 'MEDICAL FACILITY & FREE CAMPS') }}" 
              data-subtitle="{{ \App\Helpers\ContentHelper::get('home', 'hero', 'desc_1', 'Providing free health checkups, wellness camps, medicines, and specialized diagnostic support to underprivileged communities.') }}">
-            <div class="absolute inset-0 bg-black/40 z-10 pointer-events-none"></div>
             <div class="w-full h-full bg-cover bg-center" style="background-image: url('{{ \App\Helpers\ContentHelper::get('home', 'hero', 'image_1', 'https://lh3.googleusercontent.com/aida-public/AB6AXuCNYt5H_fmaIDredC2R_u6F8nT668rWXFFPbninZkyaJcWRGU6wHp5TbL4f-87pClHNYbbg2rxnfJ4cdy4_xqL4Ydhpi1XDEnSdhEYrPzAEWM06vkkENc08rQo247H0egdmjZFG_Q5UMGNn355Um0b0IG3oi3KcnZjMyV0hkROgwNps3hLQaMlaJ9ns8dtWArT8RKUHEeJulOrrz2F864yknlemMLJQolzWk9U_cO8fidC68uv0A0GS') }}')"></div>
         </div>
         <!-- Slide 2: Traditional Arts & Crafts -->
         <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000" 
              data-title="{{ \App\Helpers\ContentHelper::get('home', 'hero', 'title_2', 'TRADITIONAL ARTS & CRAFTS OF INDIA') }}" 
              data-subtitle="{{ \App\Helpers\ContentHelper::get('home', 'hero', 'desc_2', 'Encouraging local artisans and reviving ancestral heritage through raw materials support, design workshops, and fair trade.') }}">
-            <div class="absolute inset-0 bg-black/40 z-10 pointer-events-none"></div>
             <div class="w-full h-full bg-cover bg-center" style="background-image: url('{{ \App\Helpers\ContentHelper::get('home', 'hero', 'image_2', 'https://lh3.googleusercontent.com/aida-public/AB6AXuBGrmxuABT4jn6qc7pXGm8kTi1BUJPnk8qtY3x4v-Kjma80ki0iRwy9aybU24pgYDeLzPDV66Y77zwQsilhb9P9HLgX8Xsn4-DQAFU8tR5t2p_ymtA_y6kl3SwGc0Fo8Ow19kn6Cuz9JAJsaZF9R89ojz4YYhgMasMbvKOx7E8k3M-cUbfvEN7ZOzGI098Uh7NNTTHLgkO54tA7qMLJB4qmGer5w6eQQe3qTqbh3lXKvVHIyWrpwqSP') }}')"></div>
         </div>
         <!-- Slide 3: Children Learning -->
         <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000" 
              data-title="{{ \App\Helpers\ContentHelper::get('home', 'hero', 'title_3', 'EDUCATION FOR UNDERPRIVILEGED CHILDREN') }}" 
              data-subtitle="{{ \App\Helpers\ContentHelper::get('home', 'hero', 'desc_3', 'Ensuring a brighter future with free schooling, classrooms, uniforms, study materials, and healthy nutrition packs.') }}">
-            <div class="absolute inset-0 bg-black/40 z-10 pointer-events-none"></div>
             <div class="w-full h-full bg-cover bg-center" style="background-image: url('{{ \App\Helpers\ContentHelper::get('home', 'hero', 'image_3', 'https://lh3.googleusercontent.com/aida-public/AB6AXuAwkvnmMOCrxQOKH5ikxM3633PEI00ps2f_8R9tM8iA_7KRvRM4Fj4WbZHYiSxcSZbWEVceKhwRd7Sj3vryEKS35UDdojjGMSAz-cs8zA2OxAhoLgH3VgFiLQKJvcWRymAjq2TIT-jf-hAFz_y2DNSep9QzpSLxVVJE4eJYkr47H3mr5gSMTkZdtKpNl8xNt080fJJ7PzzBZJ-AZYJLpFlFuxFQeZJBlbatsRVIce2dLRuebbqNZWkb') }}')"></div>
         </div>
         <!-- Slide 4: Climate Change -->
         <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000" 
              data-title="{{ \App\Helpers\ContentHelper::get('home', 'hero', 'title_4', 'ENVIRONMENT & CLIMATE CHANGE ACTION') }}" 
              data-subtitle="{{ \App\Helpers\ContentHelper::get('home', 'hero', 'desc_4', 'Conducting street seminars, rainwater harvesting projects, river cleanups, and massive native afforestation drives.') }}">
-            <div class="absolute inset-0 bg-black/40 z-10 pointer-events-none"></div>
             <div class="w-full h-full bg-cover bg-center" style="background-image: url('{{ \App\Helpers\ContentHelper::get('home', 'hero', 'image_4', 'https://lh3.googleusercontent.com/aida-public/AB6AXuBxOZh8VE7eYPCvSKjGXUn0Dsy7aZsJIwIszHaj5Hz_1Ow3ZJpyuSDq4azT-T-EiX6_gt8dp96XxT6tbWaeoll60UY8JPZnJJLxhMDqHVhb5Mb5Mum9NdFHyyV2bHbELZiEIWLTbJhRPbQBmN5Dzux8vHgyXqGYnIILySBSB_rNc2bcbv0QvboY5lfX3_qqd4iJmTUmVJgvbVtBQziMG6Iwr01qwqS6gelx29k5vkyMnYrU1zJ-1AqR') }}')"></div>
         </div>
         <!-- Slide 5: Adult Literacy -->
         <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000" 
              data-title="{{ \App\Helpers\ContentHelper::get('home', 'hero', 'title_5', 'ADULT LITERACY & VOCATIONAL TRAINING') }}" 
              data-subtitle="{{ \App\Helpers\ContentHelper::get('home', 'hero', 'desc_5', 'Empowering communities through basic education, health awareness lessons, and hands-on vocational upskilling.') }}">
-            <div class="absolute inset-0 bg-black/40 z-10 pointer-events-none"></div>
             <div class="w-full h-full bg-cover bg-center" style="background-image: url('{{ \App\Helpers\ContentHelper::get('home', 'hero', 'image_5', 'https://lh3.googleusercontent.com/aida-public/AB6AXuAXrgcd2jnXyJgxOpiQgtwBp9SFG7T8h007dfboaBmqP4tB_QdLUQHtmfvC1JyEOzkIf1p2r_vXfR2nGQqZxvSV29J8GHWShlbH1Q5MwOynkUiPtusR920uPu1uQUoq8ISHJvRVKp-FBcfWlSkjQpLKk5CMKlvyb-XiVq79FqRQls3MDZ3kx0TsiL0AgXKiV7_PZMiRnJ3_M-FOEZXcfrISunn90Sa1umPioY2dzfMVX9Itg0l881--') }}')"></div>
         </div>
-            <div class="absolute inset-0 bg-black/40 z-10 pointer-events-none"></div>
-            <div class="w-full h-full bg-cover bg-center" style="background-image: url('{{ \App\Helpers\ContentHelper::get('home', 'hero', 'image_5', 'https://lh3.googleusercontent.com/aida-public/AB6AXuAXrgcd2jnXyJgxOpiQgtwBp9SFG7T8h007dfboaBmqP4tB_QdLUQHtmfvC1JyEOzkIf1p2r_vXfR2nGQqZxvSV29J8GHWShlbH1Q5MwOynkUiPtusR920uPu1uQUoq8ISHJvRVKp-FBcfWlSkjQpLKk5CMKlvyb-XiVq79FqRQls3MDZ3kx0TsiL0AgXKiV7_PZMiRnJ3_M-FOEZXcfrISunn90Sa1umPioY2dzfMVX9Itg0l881--') }}')"></div>
-        </div>
+    </div>
     </div>
     <div class="relative z-20 h-full flex flex-col justify-center items-center text-center px-margin-mobile pointer-events-none">
         <div class="max-w-4xl pointer-events-auto">
@@ -108,7 +101,88 @@
             <h2 class="font-headline-lg text-headline-lg-mobile md:text-4xl text-primary max-w-4xl mx-auto leading-[1.2] uppercase font-extrabold" {!! \App\Helpers\ContentHelper::editable('home', 'hero', 'subtitle', 'textarea', 'Commitment Statement') !!}>
                 "{{ \App\Helpers\ContentHelper::get('home', 'hero', 'subtitle', 'Our goal is to build a peaceful future through community welfare, environmental action, and wildlife conservation.') }}"
             </h2>
-            <div class="mt-12 flex justify-center items-center gap-4">
+
+            <!-- 7 Pillars Grid -->
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
+                <!-- Pillar 1 -->
+                <div class="bg-white/30 border border-white/50 p-6 rounded-2xl flex gap-4 items-start hover:scale-[1.02] transition-transform duration-300">
+                    <div class="p-3 bg-secondary/10 text-secondary rounded-xl flex-shrink-0">
+                        <span class="material-symbols-outlined text-2xl font-bold">school</span>
+                    </div>
+                    <div>
+                        <h4 class="font-title-md text-primary font-bold text-sm mb-1">1. Education</h4>
+                        <p class="text-xs text-gray-700 leading-relaxed">Education for Underprivileged Children along with school supplies, snacks & uniforms.</p>
+                    </div>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="bg-white/30 border border-white/50 p-6 rounded-2xl flex gap-4 items-start hover:scale-[1.02] transition-transform duration-300">
+                    <div class="p-3 bg-primary/10 text-primary rounded-xl flex-shrink-0">
+                        <span class="material-symbols-outlined text-2xl font-bold">menu_book</span>
+                    </div>
+                    <div>
+                        <h4 class="font-title-md text-primary font-bold text-sm mb-1">2. Adult Literacy</h4>
+                        <p class="text-xs text-gray-700 leading-relaxed">Adult Literacy with lessons in health & hygiene. They are also provided with Vocational Training.</p>
+                    </div>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="bg-white/30 border border-white/50 p-6 rounded-2xl flex gap-4 items-start hover:scale-[1.02] transition-transform duration-300">
+                    <div class="p-3 bg-emerald-100 text-emerald-800 rounded-xl flex-shrink-0">
+                        <span class="material-symbols-outlined text-2xl font-bold">pets</span>
+                    </div>
+                    <div>
+                        <h4 class="font-title-md text-primary font-bold text-sm mb-1">3. Animal Rescue</h4>
+                        <p class="text-xs text-gray-700 leading-relaxed">Animal Rescue & Rehabilitation. Rescued animals are vet-checked, adoptable, or sheltered.</p>
+                    </div>
+                </div>
+
+                <!-- Pillar 4 -->
+                <div class="bg-white/30 border border-white/50 p-6 rounded-2xl flex gap-4 items-start hover:scale-[1.02] transition-transform duration-300">
+                    <div class="p-3 bg-sky-100 text-sky-800 rounded-xl flex-shrink-0">
+                        <span class="material-symbols-outlined text-2xl font-bold">medical_services</span>
+                    </div>
+                    <div>
+                        <h4 class="font-title-md text-primary font-bold text-sm mb-1">4. Medical Camps</h4>
+                        <p class="text-xs text-gray-700 leading-relaxed">Medical Camps are set up from time to time for free sugar, BP, Eye checkups & hospital referrals.</p>
+                    </div>
+                </div>
+
+                <!-- Pillar 5 -->
+                <div class="bg-white/30 border border-white/50 p-6 rounded-2xl flex gap-4 items-start hover:scale-[1.02] transition-transform duration-300">
+                    <div class="p-3 bg-amber-100 text-amber-800 rounded-xl flex-shrink-0">
+                        <span class="material-symbols-outlined text-2xl font-bold">forest</span>
+                    </div>
+                    <div>
+                        <h4 class="font-title-md text-primary font-bold text-sm mb-1">5. Wildlife Conservation</h4>
+                        <p class="text-xs text-gray-700 leading-relaxed">Wildlife Conservation is needed to save species from extinction & maintain ecological balance.</p>
+                    </div>
+                </div>
+
+                <!-- Pillar 6 -->
+                <div class="bg-white/30 border border-white/50 p-6 rounded-2xl flex gap-4 items-start hover:scale-[1.02] transition-transform duration-300">
+                    <div class="p-3 bg-fuchsia-100 text-fuchsia-800 rounded-xl flex-shrink-0">
+                        <span class="material-symbols-outlined text-2xl font-bold">eco</span>
+                    </div>
+                    <div>
+                        <h4 class="font-title-md text-primary font-bold text-sm mb-1">6. Climate Awareness</h4>
+                        <p class="text-xs text-gray-700 leading-relaxed">Environment & Climate Awareness seminars, cleanups, planting trees, and harvesting rainwater.</p>
+                    </div>
+                </div>
+
+                <!-- Pillar 7 -->
+                <div class="bg-white/30 border border-white/50 p-6 rounded-2xl flex gap-4 items-start hover:scale-[1.02] transition-transform duration-300 md:col-span-2 lg:col-span-3">
+                    <div class="p-3 bg-indigo-100 text-indigo-800 rounded-xl flex-shrink-0">
+                        <span class="material-symbols-outlined text-2xl font-bold">palette</span>
+                    </div>
+                    <div>
+                        <h4 class="font-title-md text-primary font-bold text-sm mb-1">7. Indian Arts & Crafts</h4>
+                        <p class="text-xs text-gray-700 leading-relaxed">Encouraging Traditional Arts & Crafts of India by empowering rural artisans with tools and direct market access.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-16 flex justify-center items-center gap-4">
                 <div class="h-[1px] w-12 bg-primary/20"></div>
                 <span class="font-title-md text-primary/60 font-semibold">Universal Peace Council</span>
                 <div class="h-[1px] w-12 bg-primary/20"></div>
