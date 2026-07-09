@@ -58,6 +58,99 @@
         </div>
     </div>
 
+    <!-- Section: Our Vision for a Better World -->
+    <section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-24 animate-content">
+        <div class="glass-card p-8 md:p-16 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-1 rainbow-gradient"></div>
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="font-label-caps text-label-caps text-secondary tracking-[0.2em] mb-2 block font-bold">OUR DIRECTION</span>
+                <h2 class="font-headline-lg text-headline-lg-mobile md:text-4xl text-primary font-extrabold uppercase">Our Vision for a Better World</h2>
+                <p class="font-body-md text-on-surface-variant text-gray-600 mt-2">
+                    Guided by radical empathy, we operate across seven foundational pillars to build a more harmonious world.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Pillar 1 -->
+                <div class="bg-white/30 border border-white/50 p-6 rounded-2xl flex gap-4 items-start hover:scale-[1.02] transition-transform duration-300">
+                    <div class="p-3 bg-secondary/10 text-secondary rounded-xl flex-shrink-0">
+                        <span class="material-symbols-outlined text-2xl font-bold">school</span>
+                    </div>
+                    <div>
+                        <h4 class="font-title-md text-primary font-bold text-sm mb-1">1. Education</h4>
+                        <p class="text-xs text-gray-700 leading-relaxed">Education for Underprivileged Children along with school supplies, snacks & uniforms.</p>
+                    </div>
+                </div>
+                
+                <!-- Pillar 2 -->
+                <div class="bg-white/30 border border-white/50 p-6 rounded-2xl flex gap-4 items-start hover:scale-[1.02] transition-transform duration-300">
+                    <div class="p-3 bg-primary/10 text-primary rounded-xl flex-shrink-0">
+                        <span class="material-symbols-outlined text-2xl font-bold">menu_book</span>
+                    </div>
+                    <div>
+                        <h4 class="font-title-md text-primary font-bold text-sm mb-1">2. Adult Literacy</h4>
+                        <p class="text-xs text-gray-700 leading-relaxed">Adult Literacy with lessons in health & hygiene. They are also provided with Vocational Training.</p>
+                    </div>
+                </div>
+                
+                <!-- Pillar 3 -->
+                <div class="bg-white/30 border border-white/50 p-6 rounded-2xl flex gap-4 items-start hover:scale-[1.02] transition-transform duration-300">
+                    <div class="p-3 bg-emerald-100 text-emerald-800 rounded-xl flex-shrink-0">
+                        <span class="material-symbols-outlined text-2xl font-bold">pets</span>
+                    </div>
+                    <div>
+                        <h4 class="font-title-md text-primary font-bold text-sm mb-1">3. Animal Rescue</h4>
+                        <p class="text-xs text-gray-700 leading-relaxed">Animal Rescue & Rehabilitation. Rescued animals are vet-checked, adoptable, or sheltered.</p>
+                    </div>
+                </div>
+                
+                <!-- Pillar 4 -->
+                <div class="bg-white/30 border border-white/50 p-6 rounded-2xl flex gap-4 items-start hover:scale-[1.02] transition-transform duration-300">
+                    <div class="p-3 bg-sky-100 text-sky-800 rounded-xl flex-shrink-0">
+                        <span class="material-symbols-outlined text-2xl font-bold">medical_services</span>
+                    </div>
+                    <div>
+                        <h4 class="font-title-md text-primary font-bold text-sm mb-1">4. Medical Camps</h4>
+                        <p class="text-xs text-gray-700 leading-relaxed">Medical Camps are set up from time to time for free sugar, BP, Eye checkups & hospital referrals.</p>
+                    </div>
+                </div>
+                
+                <!-- Pillar 5 -->
+                <div class="bg-white/30 border border-white/50 p-6 rounded-2xl flex gap-4 items-start hover:scale-[1.02] transition-transform duration-300">
+                    <div class="p-3 bg-amber-100 text-amber-800 rounded-xl flex-shrink-0">
+                        <span class="material-symbols-outlined text-2xl font-bold">forest</span>
+                    </div>
+                    <div>
+                        <h4 class="font-title-md text-primary font-bold text-sm mb-1">5. Wildlife Conservation</h4>
+                        <p class="text-xs text-gray-700 leading-relaxed">Wildlife Conservation is needed to save species from extinction & maintain ecological balance.</p>
+                    </div>
+                </div>
+                
+                <!-- Pillar 6 -->
+                <div class="bg-white/30 border border-white/50 p-6 rounded-2xl flex gap-4 items-start hover:scale-[1.02] transition-transform duration-300">
+                    <div class="p-3 bg-fuchsia-100 text-fuchsia-800 rounded-xl flex-shrink-0">
+                        <span class="material-symbols-outlined text-2xl font-bold">eco</span>
+                    </div>
+                    <div>
+                        <h4 class="font-title-md text-primary font-bold text-sm mb-1">6. Climate Awareness</h4>
+                        <p class="text-xs text-gray-700 leading-relaxed">Environment & Climate Awareness seminars, cleanups, planting trees, and harvesting rainwater.</p>
+                    </div>
+                </div>
+
+                <!-- Pillar 7 -->
+                <div class="bg-white/30 border border-white/50 p-6 rounded-2xl flex gap-4 items-start hover:scale-[1.02] transition-transform duration-300 md:col-span-2 lg:col-span-3">
+                    <div class="p-3 bg-indigo-100 text-indigo-800 rounded-xl flex-shrink-0">
+                        <span class="material-symbols-outlined text-2xl font-bold">palette</span>
+                    </div>
+                    <div>
+                        <h4 class="font-title-md text-primary font-bold text-sm mb-1">7. Indian Arts & Crafts</h4>
+                        <p class="text-xs text-gray-700 leading-relaxed">Encouraging Traditional Arts & Crafts of India by empowering rural artisans with tools and direct market access.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Section 1: Schools & Orphanages -->
     <section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-24">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
@@ -103,14 +196,18 @@
                         <h2 class="font-headline-lg text-headline-lg-mobile text-white font-bold" {!! \App\Helpers\ContentHelper::editable('about', 'init_5', 'title', 'text', 'Initiative 5 Title') !!}>{{ \App\Helpers\ContentHelper::get('about', 'init_5', 'title', 'Artisan Revival') }}</h2>
                     </div>
                     <p class="text-body-lg text-primary-fixed text-gray-200" {!! \App\Helpers\ContentHelper::editable('about', 'init_5', 'desc', 'textarea', 'Initiative 5 Description') !!}>{{ \App\Helpers\ContentHelper::get('about', 'init_5', 'desc', 'Supporting traditional potters and saree weavers through fair market access and tools support.') }}</p>
-                    <div class="grid grid-cols-2 gap-4 text-primary">
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-primary">
                         <div class="bg-white/10 p-4 rounded-xl">
-                            <h4 class="font-title-md text-secondary-fixed mb-1 font-bold text-fuchsia-300" {!! \App\Helpers\ContentHelper::editable('about', 'init_5', 'box_1_title', 'text', 'Box 1 Title') !!}>{{ \App\Helpers\ContentHelper::get('about', 'init_5', 'box_1_title', 'Financial Literacy') }}</h4>
-                            <p class="text-sm opacity-80 text-white" {!! \App\Helpers\ContentHelper::editable('about', 'init_5', 'box_1_desc', 'textarea', 'Box 1 Description') !!}>{{ \App\Helpers\ContentHelper::get('about', 'init_5', 'box_1_desc', 'Banking, savings, phone transactions, and micro-loan management.') }}</p>
+                            <h4 class="font-title-md text-secondary-fixed mb-1 font-bold text-fuchsia-300 text-sm">Blue Pottery</h4>
+                            <p class="text-xs opacity-85 text-white">Traditional hand-painted patterns on glazed ceramic kitchen and decor wares.</p>
                         </div>
                         <div class="bg-white/10 p-4 rounded-xl">
-                            <h4 class="font-title-md text-secondary-fixed mb-1 font-bold text-fuchsia-300" {!! \App\Helpers\ContentHelper::editable('about', 'init_5', 'box_2_title', 'text', 'Box 2 Title') !!}>{{ \App\Helpers\ContentHelper::get('about', 'init_5', 'box_2_title', 'Practical Skills') }}</h4>
-                            <p class="text-sm opacity-80 text-white" {!! \App\Helpers\ContentHelper::editable('about', 'init_5', 'box_2_desc', 'textarea', 'Box 2 Description') !!}>{{ \App\Helpers\ContentHelper::get('about', 'init_5', 'box_2_desc', 'Hygiene, first-aid, and basic self-defense drills.') }}</p>
+                            <h4 class="font-title-md text-secondary-fixed mb-1 font-bold text-fuchsia-300 text-sm">Traditional Bags</h4>
+                            <p class="text-xs opacity-85 text-white">Promoting handcrafted eco-friendly cotton, canvas, and jute utility accessories.</p>
+                        </div>
+                        <div class="bg-white/10 p-4 rounded-xl">
+                            <h4 class="font-title-md text-secondary-fixed mb-1 font-bold text-fuchsia-300 text-sm">Rope Articles</h4>
+                            <p class="text-xs opacity-85 text-white">Upskilling local artisans in crafting durable, organic utility rope decor and goods.</p>
                         </div>
                     </div>
                 </div>

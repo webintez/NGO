@@ -17,37 +17,58 @@
             <button onclick="openInlineEditor(document.getElementById('slide-edit-3'))" class="bg-secondary text-white px-4 py-2.5 rounded-xl shadow-lg hover:scale-105 transition-transform flex items-center gap-2 font-label-caps text-xs uppercase font-bold">
                 <span class="material-symbols-outlined text-sm">photo_camera</span> Edit Slide 3
             </button>
+            <button onclick="openInlineEditor(document.getElementById('slide-edit-4'))" class="bg-secondary text-white px-4 py-2.5 rounded-xl shadow-lg hover:scale-105 transition-transform flex items-center gap-2 font-label-caps text-xs uppercase font-bold">
+                <span class="material-symbols-outlined text-sm">photo_camera</span> Edit Slide 4
+            </button>
+            <button onclick="openInlineEditor(document.getElementById('slide-edit-5'))" class="bg-secondary text-white px-4 py-2.5 rounded-xl shadow-lg hover:scale-105 transition-transform flex items-center gap-2 font-label-caps text-xs uppercase font-bold">
+                <span class="material-symbols-outlined text-sm">photo_camera</span> Edit Slide 5
+            </button>
         </div>
         
         <!-- Hidden trigger hooks to pass parameters to the inline editor drawer -->
         <div id="slide-edit-1" class="hidden" data-page="home" data-section="hero" data-key="image_1" data-type="image" data-label="Hero Slide 1 Image"></div>
         <div id="slide-edit-2" class="hidden" data-page="home" data-section="hero" data-key="image_2" data-type="image" data-label="Hero Slide 2 Image"></div>
         <div id="slide-edit-3" class="hidden" data-page="home" data-section="hero" data-key="image_3" data-type="image" data-label="Hero Slide 3 Image"></div>
+        <div id="slide-edit-4" class="hidden" data-page="home" data-section="hero" data-key="image_4" data-type="image" data-label="Hero Slide 4 Image"></div>
+        <div id="slide-edit-5" class="hidden" data-page="home" data-section="hero" data-key="image_5" data-type="image" data-label="Hero Slide 5 Image"></div>
     @endif
 
     <!-- Slides Container -->
     <div id="hero-slider" class="absolute inset-0">
         <!-- Slide 1: Medical Camp -->
-        <div class="hero-slide absolute inset-0 opacity-100 transition-opacity duration-1000" {!! \App\Helpers\ContentHelper::editable('home', 'hero', 'image_1', 'image', 'Hero Slide 1 Image') !!}>
+        <div class="hero-slide absolute inset-0 opacity-100 transition-opacity duration-1000" {!! \App\Helpers\ContentHelper::editable('home', 'hero', 'image_1', 'image', 'Hero Slide 1 Image') !!} data-title="MEDICAL FACILITY & FREE CAMPS" data-subtitle="Providing free health checkups, wellness camps, medicines, and specialized diagnostic support to underprivileged communities.">
             <div class="absolute inset-0 bg-black/40 z-10 pointer-events-none"></div>
             <div class="w-full h-full bg-cover bg-center" style="background-image: url('{{ \App\Helpers\ContentHelper::get('home', 'hero', 'image_1', 'https://lh3.googleusercontent.com/aida-public/AB6AXuCNYt5H_fmaIDredC2R_u6F8nT668rWXFFPbninZkyaJcWRGU6wHp5TbL4f-87pClHNYbbg2rxnfJ4cdy4_xqL4Ydhpi1XDEnSdhEYrPzAEWM06vkkENc08rQo247H0egdmjZFG_Q5UMGNn355Um0b0IG3oi3KcnZjMyV0hkROgwNps3hLQaMlaJ9ns8dtWArT8RKUHEeJulOrrz2F864yknlemMLJQolzWk9U_cO8fidC68uv0A0GS') }}')"></div>
         </div>
-        <!-- Slide 2: Children Learning -->
-        <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000" {!! \App\Helpers\ContentHelper::editable('home', 'hero', 'image_2', 'image', 'Hero Slide 2 Image') !!}>
+        <!-- Slide 2: Traditional Arts & Crafts -->
+        <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000" {!! \App\Helpers\ContentHelper::editable('home', 'hero', 'image_2', 'image', 'Hero Slide 2 Image') !!} data-title="TRADITIONAL ARTS & CRAFTS OF INDIA" data-subtitle="Encouraging local artisans and reviving ancestral heritage through raw materials support, design workshops, and fair trade.">
             <div class="absolute inset-0 bg-black/40 z-10 pointer-events-none"></div>
-            <div class="w-full h-full bg-cover bg-center" style="background-image: url('{{ \App\Helpers\ContentHelper::get('home', 'hero', 'image_2', 'https://lh3.googleusercontent.com/aida-public/AB6AXuAwkvnmMOCrxQOKH5ikxM3633PEI00ps2f_8R9tM8iA_7KRvRM4Fj4WbZHYiSxcSZbWEVceKhwRd7Sj3vryEKS35UDdojjGMSAz-cs8zA2OxAhoLgH3VgFiLQKJvcWRymAjq2TIT-jf-hAFz_y2DNSep9QzpSLxVVJE4eJYkr47H3mr5gSMTkZdtKpNl8xNt080fJJ7PzzBZJ-AZYJLpFlFuxFQeZJBlbatsRVIce2dLRuebbqNZWkb') }}')"></div>
+            <div class="w-full h-full bg-cover bg-center" style="background-image: url('{{ \App\Helpers\ContentHelper::get('home', 'hero', 'image_2', 'https://lh3.googleusercontent.com/aida-public/AB6AXuBGrmxuABT4jn6qc7pXGm8kTi1BUJPnk8qtY3x4v-Kjma80ki0iRwy9aybU24pgYDeLzPDV66Y77zwQsilhb9P9HLgX8Xsn4-DQAFU8tR5t2p_ymtA_y6kl3SwGc0Fo8Ow19kn6Cuz9JAJsaZF9R89ojz4YYhgMasMbvKOx7E8k3M-cUbfvEN7ZOzGI098Uh7NNTTHLgkO54tA7qMLJB4qmGer5w6eQQe3qTqbh3lXKvVHIyWrpwqSP') }}')"></div>
         </div>
-        <!-- Slide 3: Volunteer & Animals -->
-        <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000" {!! \App\Helpers\ContentHelper::editable('home', 'hero', 'image_3', 'image', 'Hero Slide 3 Image') !!}>
+        <!-- Slide 3: Children Learning -->
+        <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000" {!! \App\Helpers\ContentHelper::editable('home', 'hero', 'image_3', 'image', 'Hero Slide 3 Image') !!} data-title="EDUCATION FOR UNDERPRIVILEGED CHILDREN" data-subtitle="Ensuring a brighter future with free schooling, classrooms, uniforms, study materials, and healthy nutrition packs.">
             <div class="absolute inset-0 bg-black/40 z-10 pointer-events-none"></div>
-            <div class="w-full h-full bg-cover bg-center" style="background-image: url('{{ \App\Helpers\ContentHelper::get('home', 'hero', 'image_3', 'https://lh3.googleusercontent.com/aida-public/AB6AXuCNYt5H_fmaIDredC2R_u6F8nT668rWXFFPbninZkyaJcWRGU6wHp5TbL4f-87pClHNYbbg2rxnfJ4cdy4_xqL4Ydhpi1XDEnSdhEYrPzAEWM06vkkENc08rQo247H0egdmjZFG_Q5UMGNn355Um0b0IG3oi3KcnZjMyV0hkROgwNps3hLQaMlaJ9ns8dtWArT8RKUHEeJulOrrz2F864yknlemMLJQolzWk9U_cO8fidC68uv0A0GS') }}')"></div>
+            <div class="w-full h-full bg-cover bg-center" style="background-image: url('{{ \App\Helpers\ContentHelper::get('home', 'hero', 'image_3', 'https://lh3.googleusercontent.com/aida-public/AB6AXuAwkvnmMOCrxQOKH5ikxM3633PEI00ps2f_8R9tM8iA_7KRvRM4Fj4WbZHYiSxcSZbWEVceKhwRd7Sj3vryEKS35UDdojjGMSAz-cs8zA2OxAhoLgH3VgFiLQKJvcWRymAjq2TIT-jf-hAFz_y2DNSep9QzpSLxVVJE4eJYkr47H3mr5gSMTkZdtKpNl8xNt080fJJ7PzzBZJ-AZYJLpFlFuxFQeZJBlbatsRVIce2dLRuebbqNZWkb') }}')"></div>
+        </div>
+        <!-- Slide 4: Climate Change -->
+        <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000" {!! \App\Helpers\ContentHelper::editable('home', 'hero', 'image_4', 'image', 'Hero Slide 4 Image') !!} data-title="ENVIRONMENT & CLIMATE CHANGE ACTION" data-subtitle="Conducting street seminars, rainwater harvesting projects, river cleanups, and massive native afforestation drives.">
+            <div class="absolute inset-0 bg-black/40 z-10 pointer-events-none"></div>
+            <div class="w-full h-full bg-cover bg-center" style="background-image: url('{{ \App\Helpers\ContentHelper::get('home', 'hero', 'image_4', 'https://lh3.googleusercontent.com/aida-public/AB6AXuBxOZh8VE7eYPCvSKjGXUn0Dsy7aZsJIwIszHaj5Hz_1Ow3ZJpyuSDq4azT-T-EiX6_gt8dp96XxT6tbWaeoll60UY8JPZnJJLxhMDqHVhb5Mb5Mum9NdFHyyV2bHbELZiEIWLTbJhRPbQBmN5Dzux8vHgyXqGYnIILySBSB_rNc2bcbv0QvboY5lfX3_qqd4iJmTUmVJgvbVtBQziMG6Iwr01qwqS6gelx29k5vkyMnYrU1zJ-1AqR') }}')"></div>
+        </div>
+        <!-- Slide 5: Adult Literacy -->
+        <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000" {!! \App\Helpers\ContentHelper::editable('home', 'hero', 'image_5', 'image', 'Hero Slide 5 Image') !!} data-title="ADULT LITERACY & VOCATIONAL TRAINING" data-subtitle="Empowering communities through basic education, health awareness lessons, and hands-on vocational upskilling.">
+            <div class="absolute inset-0 bg-black/40 z-10 pointer-events-none"></div>
+            <div class="w-full h-full bg-cover bg-center" style="background-image: url('{{ \App\Helpers\ContentHelper::get('home', 'hero', 'image_5', 'https://lh3.googleusercontent.com/aida-public/AB6AXuAXrgcd2jnXyJgxOpiQgtwBp9SFG7T8h007dfboaBmqP4tB_QdLUQHtmfvC1JyEOzkIf1p2r_vXfR2nGQqZxvSV29J8GHWShlbH1Q5MwOynkUiPtusR920uPu1uQUoq8ISHJvRVKp-FBcfWlSkjQpLKk5CMKlvyb-XiVq79FqRQls3MDZ3kx0TsiL0AgXKiV7_PZMiRnJ3_M-FOEZXcfrISunn90Sa1umPioY2dzfMVX9Itg0l881--') }}')"></div>
         </div>
     </div>
     <div class="relative z-20 h-full flex flex-col justify-center items-center text-center px-margin-mobile pointer-events-none">
         <div class="max-w-4xl pointer-events-auto">
-            <h1 class="font-display-xl text-3xl md:text-display-xl text-white mb-8 leading-tight transition-all duration-700 opacity-0 transform translate-y-10 text-glow" id="animated-headline">
-                <span {!! \App\Helpers\ContentHelper::editable('home', 'hero', 'title', 'text', 'Hero Title Line') !!}>{{ \App\Helpers\ContentHelper::get('home', 'hero', 'title', 'SERVING HUMANITY. PROTECTING ANIMALS. SAFEGUARDING THE EARTH.') }}</span>
+            <h1 class="font-display-xl text-3xl md:text-5xl text-white mb-4 leading-tight transition-all duration-700 opacity-0 transform translate-y-10 text-glow" id="animated-headline">
+                <span id="slider-title-text">{{ \App\Helpers\ContentHelper::get('home', 'hero', 'title', 'SERVING HUMANITY. PROTECTING ANIMALS. SAFEGUARDING THE EARTH.') }}</span>
             </h1>
+            <p class="font-body-lg text-white mb-8 max-w-2xl mx-auto transition-all duration-700 opacity-0 transform translate-y-10 text-sm md:text-base leading-relaxed" id="animated-subtitle">
+                Providing comprehensive healthcare support, ecological protection, and community empowerment.
+            </p>
             <div class="flex gap-4 justify-center">
                 <a href="{{ route('about') }}" class="bg-secondary text-on-secondary px-10 py-4 rounded-full font-label-caps text-label-caps hover:scale-105 transition-transform text-center font-bold">Our Missions</a>
                 <a href="{{ route('gallery') }}" class="bg-white/20 backdrop-blur-md text-white border border-white/40 px-10 py-4 rounded-full font-label-caps text-label-caps hover:bg-white/30 transition-all font-bold">View Gallery</a>
@@ -56,6 +77,8 @@
     </div>
     <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex gap-2">
         <div class="slider-dot w-12 h-1 bg-white rounded-full cursor-pointer opacity-100 transition-opacity"></div>
+        <div class="slider-dot w-12 h-1 bg-white rounded-full cursor-pointer opacity-40 transition-opacity"></div>
+        <div class="slider-dot w-12 h-1 bg-white rounded-full cursor-pointer opacity-40 transition-opacity"></div>
         <div class="slider-dot w-12 h-1 bg-white rounded-full cursor-pointer opacity-40 transition-opacity"></div>
         <div class="slider-dot w-12 h-1 bg-white rounded-full cursor-pointer opacity-40 transition-opacity"></div>
     </div>
@@ -232,13 +255,34 @@
     const slides = document.querySelectorAll('.hero-slide');
     const dots = document.querySelectorAll('.slider-dot');
     const headline = document.getElementById('animated-headline');
+    const subtitle = document.getElementById('animated-subtitle');
+    const titleText = document.getElementById('slider-title-text');
     let currentSlide = 0;
 
     function showSlide(index) {
-        slides.forEach((slide, i) => {
-            slide.style.opacity = i === index ? '1' : '0';
-            dots[i].style.opacity = i === index ? '1' : '0.4';
-        });
+        // Fade out text first
+        headline.style.opacity = '0';
+        headline.style.transform = 'translateY(10px)';
+        subtitle.style.opacity = '0';
+        subtitle.style.transform = 'translateY(10px)';
+        
+        setTimeout(() => {
+            slides.forEach((slide, i) => {
+                slide.style.opacity = i === index ? '1' : '0';
+                dots[i].style.opacity = i === index ? '1' : '0.4';
+            });
+            
+            // Set text from slide data-attributes
+            const activeSlide = slides[index];
+            titleText.innerText = activeSlide.getAttribute('data-title');
+            subtitle.innerText = activeSlide.getAttribute('data-subtitle');
+            
+            // Fade in text
+            headline.style.opacity = '1';
+            headline.style.transform = 'translateY(0)';
+            subtitle.style.opacity = '1';
+            subtitle.style.transform = 'translateY(0)';
+        }, 300);
     }
 
     function nextSlide() {
@@ -246,13 +290,24 @@
         showSlide(currentSlide);
     }
 
-    setInterval(nextSlide, 5000);
+    // Set click handlers on dots
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentSlide = index;
+            showSlide(currentSlide);
+        });
+    });
 
-    // Headline Animation
+    setInterval(nextSlide, 6000);
+
+    // Initial Headline Animation
     window.onload = () => {
         setTimeout(() => {
             headline.classList.remove('opacity-0', 'translate-y-10');
             headline.classList.add('opacity-100', 'translate-y-0');
+            subtitle.classList.remove('opacity-0', 'translate-y-10');
+            subtitle.classList.add('opacity-100', 'translate-y-0');
+            showSlide(0);
         }, 500);
     };
 </script>

@@ -43,13 +43,17 @@
                 <span class="material-symbols-outlined">person</span>
                 <span class="font-title-md text-sm font-bold">Adult Literacy</span>
             </button>
-            <button class="cause-tab glass-card px-6 py-4 rounded-xl flex items-center gap-3 border-2 border-transparent transition-all hover:border-secondary active:scale-95 text-primary opacity-60 flex-shrink-0" data-tab="forest" onclick="switchTab('forest')">
-                <span class="material-symbols-outlined">forest</span>
-                <span class="font-title-md text-sm font-bold">Reforestation</span>
+            <button class="cause-tab glass-card px-6 py-4 rounded-xl flex items-center gap-3 border-2 border-transparent transition-all hover:border-secondary active:scale-95 text-primary opacity-60 flex-shrink-0" data-tab="wildlife" onclick="switchTab('wildlife')">
+                <span class="material-symbols-outlined">nature_people</span>
+                <span class="font-title-md text-sm font-bold">Wildlife Conservation</span>
             </button>
             <button class="cause-tab glass-card px-6 py-4 rounded-xl flex items-center gap-3 border-2 border-transparent transition-all hover:border-secondary active:scale-95 text-primary opacity-60 flex-shrink-0" data-tab="art" onclick="switchTab('art')">
                 <span class="material-symbols-outlined">palette</span>
                 <span class="font-title-md text-sm font-bold">Support Artisans</span>
+            </button>
+            <button class="cause-tab glass-card px-6 py-4 rounded-xl flex items-center gap-3 border-2 border-transparent transition-all hover:border-secondary active:scale-95 text-primary opacity-60 flex-shrink-0" data-tab="climate" onclick="switchTab('climate')">
+                <span class="material-symbols-outlined">eco</span>
+                <span class="font-title-md text-sm font-bold">Climate Awareness</span>
             </button>
         </div>
 
@@ -100,18 +104,22 @@
                         <h4 class="font-title-md text-primary font-bold text-lg">Select Contribution</h4>
                         
                         <!-- Preset Amount Buttons -->
-                        <div class="grid grid-cols-3 gap-3">
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
                             <button type="button" class="amt-btn border-2 border-primary/10 py-3 rounded-xl hover:border-secondary transition-all group active:scale-95" onclick="setAmount(500, this)">
-                                <span class="block font-title-md text-primary group-hover:text-secondary font-bold">₹500</span>
+                                <span class="block font-title-md text-primary group-hover:text-secondary font-bold text-sm">₹500</span>
                                 <span class="text-[9px] font-label-caps text-on-surface-variant uppercase font-bold text-gray-500">Small Help</span>
                             </button>
                             <button type="button" class="amt-btn border-2 border-secondary py-3 rounded-xl transition-all group active:scale-95 bg-secondary/5" id="default-amt-btn" onclick="setAmount(1000, this)">
-                                <span class="block font-title-md text-secondary font-bold">₹1000</span>
+                                <span class="block font-title-md text-secondary font-bold text-sm">₹1000</span>
                                 <span class="text-[9px] font-label-caps text-on-surface-variant uppercase font-bold text-gray-500">Impactful</span>
                             </button>
                             <button type="button" class="amt-btn border-2 border-primary/10 py-3 rounded-xl hover:border-secondary transition-all group active:scale-95" onclick="setAmount(5000, this)">
-                                <span class="block font-title-md text-primary group-hover:text-secondary font-bold">₹5000</span>
+                                <span class="block font-title-md text-primary group-hover:text-secondary font-bold text-sm">₹5000</span>
                                 <span class="text-[9px] font-label-caps text-on-surface-variant uppercase font-bold text-gray-500">Change Agent</span>
+                            </button>
+                            <button type="button" class="amt-btn border-2 border-primary/10 py-3 rounded-xl hover:border-secondary transition-all group active:scale-95" onclick="setAmount(10000, this)">
+                                <span class="block font-title-md text-primary group-hover:text-secondary font-bold text-sm">₹10,000</span>
+                                <span class="text-[9px] font-label-caps text-on-surface-variant uppercase font-bold text-gray-500">Visionary</span>
                             </button>
                         </div>
 
@@ -237,88 +245,141 @@
             title: "Animal Rescue",
             label: "WILDLIFE PROTECTION & STRAY CARE",
             icon: "pets",
-            desc: "Every creature deserves a life free from pain. Our rescue teams operate 24/7 to provide medical aid, shelter, and rehabilitation to injured strays and trafficked wildlife. Your donation ensures surgical kits, nutrient-rich food, and forever-homes for those who cannot speak for themselves.",
+            desc: "Every creature deserves a life free from pain. Our rescue teams operate 24/7 to provide medical aid, shelter, and rehabilitation to injured strays and rescued farm animals.",
             stat1: "12,400+",
             label1: "Animals Treated Yearly",
             stat2: "45",
             label2: "Active Mobile Clinics",
-            imgUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuAkpSMfJ4CQfyYf9NjxNQX6ZSreDeE4BweW8F0EUj_yLdloPPQtIjfLCmIOUk-ZQVTH5JPcmarjs6-RI9UO6StTp3Tu54_HPN_1TFCV3XUbSkq776CbGuoJMp8pSPgKnNaK4U4zsA5bi1uBZrMGMp0yFf6qTrzA43Agt8BZgz0fVis8dyUuITWiZzSMnZfpeP8ECRbbg1mcAHgiiBHpfL9rzRKQQQtQm3by3aeh53W_yP4CCTP6vN4h"
+            imgUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuAkpSMfJ4CQfyYf9NjxNQX6ZSreDeE4BweW8F0EUj_yLdloPPQtIjfLCmIOUk-ZQVTH5JPcmarjs6-RI9UO6StTp3Tu54_HPN_1TFCV3XUbSkq776CbGuoJMp8pSPgKnNaK4U4zsA5bi1uBZrMGMp0yFf6qTrzA43Agt8BZgz0fVis8dyUuITWiZzSMnZfpeP8ECRbbg1mcAHgiiBHpfL9rzRKQQQtQm3by3aeh53W_yP4CCTP6vN4h",
+            levels: {
+                500: "This will go towards paying vet fees of rescued stray animals.",
+                1000: "This will provide nutritious food for a rescued street animal for a month.",
+                5000: "This will sponsor critical food and veterinary expenses for 3 months.",
+                10000: "This will fund 6 months of upkeep, specialized food, and vet care for a rescued stray."
+            }
         },
         health: {
             title: "Health Camps",
             label: "REMOTE MEDICAL INTERVENTION",
             icon: "medical_services",
-            desc: "Bringing world-class healthcare to the doorstep of the underserved. We organize weekly health camps in rural belts, offering free diagnostics, medication, and specialized surgeries. From pediatric care to geriatric support, we ensure distance is never a barrier to health.",
+            desc: "Bringing world-class healthcare to the doorstep of the underserved. We organize weekly health camps in rural belts, offering free diagnostics, medication, and specialized surgeries.",
             stat1: "85,000+",
             label1: "Patients Screened",
             stat2: "120+",
             label2: "Volunteer Doctors",
-            imgUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuDO0b5nYcQKimcBQxKDb1WkgnwQxE36FB_LaihLD4WYsMDEljMDbyDVCAe-LulBYDcRXJdtsJuAiqo7pnKniYK7HbBqXYGOumt0HxjT_ZMwKP-SwJ3IUKGFWzdyRMUjna8FvCxou-rawhsLPNAZMcwyX4kr-fwIDrpTiIhdtbJ-DRR4vMPzRWa0yBvSrSklo2daHfHQJb76Amu8nL8VIll59Ge4drZ9jhVR2xS1k69034ak4l5lMp2W"
+            imgUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuDO0b5nYcQKimcBQxKDb1WkgnwQxE36FB_LaihLD4WYsMDEljMDbyDVCAe-LulBYDcRXJdtsJuAiqo7pnKniYK7HbBqXYGOumt0HxjT_ZMwKP-SwJ3IUKGFWzdyRMUjna8FvCxou-rawhsLPNAZMcwyX4kr-fwIDrpTiIhdtbJ-DRR4vMPzRWa0yBvSrSklo2daHfHQJb76Amu8nL8VIll59Ge4drZ9jhVR2xS1k69034ak4l5lMp2W",
+            levels: {
+                500: "This will organize health and wellness camps for school children.",
+                1000: "This will support dedicated health screening camps for underprivileged children.",
+                5000: "This will sponsor comprehensive health camps for adults including necessary blood tests.",
+                10000: "This will ensure 10 underprivileged children get comprehensive medical check-ups."
+            }
         },
         child: {
             title: "Child Education",
             label: "EMPOWERING FUTURE LEADERS",
             icon: "child_care",
-            desc: "Education is the greatest equalizer. We provide comprehensive schooling support, digital literacy, and creative arts exposure to children from marginalized communities. Your donation covers school kits, midday meals, and teacher salaries.",
+            desc: "Education is the greatest equalizer. We provide comprehensive schooling support, digital literacy, and creative arts exposure to children from marginalized communities.",
             stat1: "3,200",
             label1: "Students Sponsored",
             stat2: "18",
             label2: "Learning Centers",
-            imgUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuCT2G_Uzp0Z-jSbEcsY61CSfiqu0Hgs7qVeWj65vlS8NlXhN0rcgFrpuVR9-THQj8mTHuiXYqyZTzkETAXq6sexRsA54B4eEbWtUF4B5bqMQDMYKEAgV9E-34pTSvi1Z38sgqOXs1ttWrL97IJmI83hnC2uRmoo5zgyy1PTptdqQdlf-wZTc97pSukSuzwFicYGb7m8wpqRBqI3j_ImewcbhFUKX5eSUfC82xMrCdgtpv-ouUPX4cqp"
+            imgUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuCT2G_Uzp0Z-jSbEcsY61CSfiqu0Hgs7qVeWj65vlS8NlXhN0rcgFrpuVR9-THQj8mTHuiXYqyZTzkETAXq6sexRsA54B4eEbWtUF4B5bqMQDMYKEAgV9E-34pTSvi1Z38sgqOXs1ttWrL97IJmI83hnC2uRmoo5zgyy1PTptdqQdlf-wZTc97pSukSuzwFicYGb7m8wpqRBqI3j_ImewcbhFUKX5eSUfC82xMrCdgtpv-ouUPX4cqp",
+            levels: {
+                500: "This will provide essential school stationery for a child for 6 months.",
+                1000: "This will provide hot midday meals for an underprivileged child for a month.",
+                5000: "This will sponsor healthy meals for a child for 5 months.",
+                10000: "This will fully fund 1 child's nutritious meals for 10 months."
+            }
         },
         adult: {
             title: "Adult Literacy",
             label: "BREAKING CYCLES OF SILENCE",
             icon: "person",
-            desc: "It is never too late to learn. Our evening classes empower adults with basic reading, writing, and financial literacy skills. By educating an adult, we uplift an entire household, enabling them to navigate the modern world with dignity and confidence.",
+            desc: "It is never too late to learn. Our evening classes empower adults with basic reading, writing, and financial literacy skills, enabling them to navigate the modern world with dignity.",
             stat1: "950+",
             label1: "Adult Graduates",
             stat2: "72%",
             label2: "Women Participants",
-            imgUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuAXrgcd2jnXyJgxOpiQgtwBp9SFG7T8h007dfboaBmqP4tB_QdLUQHtmfvC1JyEOzkIf1p2r_vXfR2nGQqZxvSV29J8GHWShlbH1Q5MwOynkUiPtusR920uPu1uQUoq8ISHJvRVKp-FBcfWlSkjQpLKk5CMKlvyb-XiVq79FqRQls3MDZ3kx0TsiL0AgXKiV7_PZMiRnJ3_M-FOEZXcfrISunn90Sa1umPioY2dzfMVX9Itg0l881--"
+            imgUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuAXrgcd2jnXyJgxOpiQgtwBp9SFG7T8h007dfboaBmqP4tB_QdLUQHtmfvC1JyEOzkIf1p2r_vXfR2nGQqZxvSV29J8GHWShlbH1Q5MwOynkUiPtusR920uPu1uQUoq8ISHJvRVKp-FBcfWlSkjQpLKk5CMKlvyb-XiVq79FqRQls3MDZ3kx0TsiL0AgXKiV7_PZMiRnJ3_M-FOEZXcfrISunn90Sa1umPioY2dzfMVX9Itg0l881--",
+            levels: {
+                500: "This will purchase textbooks and writing stationery sets for adult learners.",
+                1000: "This will provide warm clothes for adult learners.",
+                5000: "This will supply warm bedding, clothes, and essential medicine kits for a family.",
+                10000: "This will sponsor 6 months of dry ration, books, checkups, bedding, and medicine kits."
+            }
         },
-        forest: {
-            title: "Reforestation",
-            label: "HEALING THE MOTHER EARTH",
-            icon: "forest",
-            desc: "Our mission to plant trees is a battle against climate change. We restore indigenous forests that provide habitat for wildlife and clean air for our cities. We involve local communities in 'Seed-to-Tree' monitoring programs.",
-            stat1: "450k+",
-            label1: "Saplings Planted",
-            stat2: "2,400",
-            label2: "Acres Restored",
-            imgUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuBxOZh8VE7eYPCvSKjGXUn0Dsy7aZsJIwIszHaj5Hz_1Ow3ZJpyuSDq4azT-T-EiX6_gt8dp96XxT6tbWaeoll60UY8JPZnJJLxhMDqHVhb5Mb5Mum9NdFHyyV2bHbELZiEIWLTbJhRPbQBmN5Dzux8vHgyXqGYnIILySBSB_rNc2bcbv0QvboY5lfX3_qqd4iJmTUmVJgvbVtBQziMG6Iwr01qwqS6gelx29k5vkyMnYrU1zJ-1AqR"
+        wildlife: {
+            title: "Wildlife Conservation",
+            label: "PRESERVING WILD SANCTUARIES",
+            icon: "nature_people",
+            desc: "Protecting endangered species and preserving forest buffer zones from encroachment. We work hand-in-hand with forest rangers to protect wildlife habitats.",
+            stat1: "1,200",
+            label1: "Acres Protected",
+            stat2: "8",
+            label2: "Endangered Species Monitored",
+            imgUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuBxOZh8VE7eYPCvSKjGXUn0Dsy7aZsJIwIszHaj5Hz_1Ow3ZJpyuSDq4azT-T-EiX6_gt8dp96XxT6tbWaeoll60UY8JPZnJJLxhMDqHVhb5Mb5Mum9NdFHyyV2bHbELZiEIWLTbJhRPbQBmN5Dzux8vHgyXqGYnIILySBSB_rNc2bcbv0QvboY5lfX3_qqd4iJmTUmVJgvbVtBQziMG6Iwr01qwqS6gelx29k5vkyMnYrU1zJ-1AqR",
+            levels: {
+                500: "This will support organizing Nature Warriors who work directly with Forest Rangers.",
+                1000: "This will help arrange water supplies in forest areas by filling dried-up natural water holes.",
+                5000: "This will fully fund creating new watering holes for wild animals in dried forest tracts.",
+                10000: "This will coordinate volunteer jungle logistics and wildlife healthcare in association with authorities."
+            }
         },
         art: {
             title: "Support Artisans",
             label: "PRESERVING CULTURAL SOUL",
             icon: "palette",
-            desc: "Protecting ancient crafts from the onslaught of mass production. We provide traditional artisans with better tools, fair-trade markets, and design workshops. Your support ensures that our heritage doesn't just survive, but thrives.",
+            desc: "Protecting ancient crafts from the onslaught of mass production. We provide traditional artisans with better tools, fair-trade markets, and design workshops.",
             stat1: "420",
             label1: "Artisan Families",
             stat2: "15",
             label2: "Traditional Crafts",
-            imgUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuBGrmxuABT4jn6qc7pXGm8kTi1BUJPnk8qtY3x4v-Kjma80ki0iRwy9aybU24pgYDeLzPDV66Y77zwQsilhb9P9HLgX8Xsn4-DQAFU8tR5t2p_ymtA_y6kl3SwGc0Fo8Ow19kn6Cuz9JAJsaZF9R89ojz4YYhgMasMbvKOx7E8k3M-cUbfvEN7ZOzGI098Uh7NNTTHLgkO54tA7qMLJB4qmGer5w6eQQe3qTqbh3lXKvVHIyWrpwqSP"
+            imgUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuBGrmxuABT4jn6qc7pXGm8kTi1BUJPnk8qtY3x4v-Kjma80ki0iRwy9aybU24pgYDeLzPDV66Y77zwQsilhb9P9HLgX8Xsn4-DQAFU8tR5t2p_ymtA_y6kl3SwGc0Fo8Ow19kn6Cuz9JAJsaZF9R89ojz4YYhgMasMbvKOx7E8k3M-cUbfvEN7ZOzGI098Uh7NNTTHLgkO54tA7qMLJB4qmGer5w6eQQe3qTqbh3lXKvVHIyWrpwqSP",
+            levels: {
+                500: "This will provide essential medical care checkups for an artisan family.",
+                1000: "This will purchase high-quality raw materials for an artisan to start creating.",
+                5000: "This will arrange upskilling and modern craft upgrading courses for local creators.",
+                10000: "This will supply extensive modern training, tools, equipment, and large raw material stock."
+            }
+        },
+        climate: {
+            title: "Climate Awareness",
+            label: "HEALING THE MOTHER EARTH",
+            icon: "eco",
+            desc: "Combating climate change through grassroots action: clean energy advocacy, rainwater harvesting, zero-waste workshops, and city-wide cleanliness drives.",
+            stat1: "450k+",
+            label1: "Saplings Planted",
+            stat2: "2,400",
+            label2: "Acres Restored",
+            imgUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuDVnczhTQeC98qq9eQGoe6MgEusKhVqXO2zJ5pngOUmR4vse3sRumSKEtGO6FFJHdGnzMBRTxEqMUnDBHw7JlH2sdCi_bbKvnCNxwJuwgJfHWzKq3S0bafNZ9w64c42RAGZS7alGYa-Bm-d8T7ZAm6YJjAyuOORwDLOPImNKeRXo9-5GJMCl5HAsBELACaI3hZ_87Uwc-stKvFCCX9G0aDpLrJThpWZ1SEj7mMtJMlnCiFqFfjSE6g2",
+            levels: {
+                500: "This will arrange volunteers to spread carbon footprint awareness and clean-up buildings.",
+                1000: "This will help spread climate action programs in schools, slums, and industrial units.",
+                5000: "This will fund training sessions for societies to install Rainwater Harvesting systems.",
+                10000: "This will support workshops on recycling and upcycling to reduce new resource extraction."
+            }
         }
     };
 
-    const impactMessages = {
-        500: "This will fund urgent field care and rescue operations.",
-        1000: "This will fund essential diagnostic screenings and care kits.",
-        5000: "This will sponsor critical long-term learning materials or artisan equipment."
-    };
+    let selectedCause = 'animal';
 
     function switchTab(cause) {
+        selectedCause = cause;
         const data = impactData[cause];
         const detailEl = document.getElementById('impact-detail');
         const imgEl = document.getElementById('impact-img');
         
         // Update Tab styles
         document.querySelectorAll('.cause-tab').forEach(btn => {
-            btn.classList.add('opacity-60');
+            btn.classList.add('opacity-60', 'border-transparent');
             btn.classList.remove('border-secondary');
         });
-        document.querySelector(`[data-tab="${cause}"]`).classList.remove('opacity-60');
-        document.querySelector(`[data-tab="${cause}"]`).classList.add('border-secondary');
+        const activeTab = document.querySelector(`[data-tab="${cause}"]`);
+        if (activeTab) {
+            activeTab.classList.remove('opacity-60', 'border-transparent');
+            activeTab.classList.add('border-secondary');
+        }
 
         // Animate transition
         detailEl.classList.remove('animate-content');
@@ -338,6 +399,16 @@
 
         // Update hidden input cause
         document.getElementById('input-cause').value = data.title;
+
+        // Reset preset buttons and update current amount description
+        const currentAmount = document.getElementById('input-amount').value;
+        updateImpactMessage(currentAmount);
+    }
+
+    function updateImpactMessage(amt) {
+        const data = impactData[selectedCause];
+        const msg = data.levels[amt] || `Thank you for contributing ₹${Number(amt).toLocaleString()} to support ${data.title}!`;
+        document.getElementById('impact-text').innerText = `"${msg}"`;
     }
 
     function setAmount(amt, btn) {
@@ -359,8 +430,7 @@
         document.getElementById('input-amount').value = amt;
         
         // Update impact message
-        const msg = impactMessages[amt] || "Thank you for supporting this vital initiative!";
-        document.getElementById('impact-text').innerText = `"${msg}"`;
+        updateImpactMessage(amt);
     }
 
     function updateCustomAmount(val) {
@@ -371,7 +441,12 @@
             b.querySelector('span').classList.add('text-primary');
             b.querySelector('span').classList.remove('text-secondary');
         });
-        document.getElementById('impact-text').innerText = `"Thank you for contributing ₹${Number(val).toLocaleString()} to our cause!"`;
+        
+        if (val && Number(val) > 0) {
+            updateImpactMessage(val);
+        } else {
+            document.getElementById('impact-text').innerText = '"Thank you for supporting this vital initiative!"';
+        }
     }
 
     function checkoutTab(type) {
@@ -394,6 +469,12 @@
             document.getElementById('input-payment').value = "Card";
         }
     }
+
+    // Initialize layout on load
+    window.onload = () => {
+        switchTab('animal');
+        setAmount(1000, document.getElementById('default-amt-btn'));
+    };
 
     // Razorpay Integration Listener
     document.getElementById('donation-form').addEventListener('submit', function(e) {
