@@ -6,6 +6,7 @@ use App\Models\ContactInquiry;
 use App\Models\DonationRecord;
 use App\Models\ProductInquiry;
 use App\Models\Setting;
+use App\Models\BlogPost;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -47,6 +48,7 @@ class AdminController extends Controller
         $contactInquiries = ContactInquiry::latest()->paginate(10, ['*'], 'contacts');
         $productInquiries = ProductInquiry::latest()->paginate(10, ['*'], 'products');
         $donationRecords = DonationRecord::latest()->paginate(10, ['*'], 'donations');
+        $blogPosts = BlogPost::latest()->paginate(10, ['*'], 'blogs');
 
         // Calculate donation stats
         $totalDonations = DonationRecord::sum('amount');
@@ -72,7 +74,8 @@ class AdminController extends Controller
             'donationRecords', 
             'totalDonations',
             'causeStats',
-            'settings'
+            'settings',
+            'blogPosts'
         ));
     }
 
@@ -155,5 +158,46 @@ class AdminController extends Controller
             'success' => true,
             'value' => $newValue,
         ]);
+     }
+
+    public function storeBlogPost(Request $request)
+    {
+        if (!Auth::check()) {
+            return redirect()->route('admin.login');
+        }
+
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'category' => 'required|string|max:255',
+            'reading_time' => 'required|string|max:255',
+            'image_url' => 'required|url',
+            'summary' => 'required|string',
+            'content' => 'required|string',
+        ]);
+
+        $slug = Str::slug($validated['title']);
+        $originalSlug = $slug;
+        $count = 1;
+        while (BlogPost::where('slug', $slug)->exists()) {
+            $slug = $originalSlug . '-' . $count;
+            $count++;
+        }
+        $validated['slug'] = $slug;
+
+        BlogPost::create($validated);
+
+        return redirect()->back()->with('success', 'Blog post published successfully.');
+    }
+
+    public function deleteBlogPost($id)
+    {
+        if (!Auth::check()) {
+            return redirect()->route('admin.login');
+        }
+
+        $post = BlogPost::findOrFail($id);
+        $post->delete();
+
+        return redirect()->back()->with('success', 'Blog post deleted successfully.');
     }
 }

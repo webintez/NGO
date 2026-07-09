@@ -82,6 +82,7 @@
             <button class="flex-1 md:flex-none md:px-8 py-3 font-label-caps text-label-caps font-bold border-b-2 border-secondary text-secondary text-xs" data-dash-tab="donations" onclick="switchDashTab('donations')">Donations Log</button>
             <button class="flex-1 md:flex-none md:px-8 py-3 font-label-caps text-label-caps font-bold text-on-surface-variant text-xs" data-dash-tab="contacts" onclick="switchDashTab('contacts')">Contact Messages</button>
             <button class="flex-1 md:flex-none md:px-8 py-3 font-label-caps text-label-caps font-bold text-on-surface-variant text-xs" data-dash-tab="products" onclick="switchDashTab('products')">Artisan Orders</button>
+            <button class="flex-1 md:flex-none md:px-8 py-3 font-label-caps text-label-caps font-bold text-on-surface-variant text-xs" data-dash-tab="blogs" onclick="switchDashTab('blogs')">Manage Blogs</button>
             <button class="flex-1 md:flex-none md:px-8 py-3 font-label-caps text-label-caps font-bold text-on-surface-variant text-xs" data-dash-tab="settings" onclick="switchDashTab('settings')">Razorpay Config</button>
         </div>
 
@@ -224,7 +225,119 @@
             </div>
         </div>
 
+        <!-- Blogs Tab Content -->
+        <div class="dashboard-tab-content" id="dash-blogs">
+            <div class="flex justify-between items-center mb-6">
+                <h4 class="font-title-md text-primary font-bold uppercase text-lg">Blog Posts Directory</h4>
+                <button onclick="document.getElementById('create-blog-modal').classList.remove('hidden')" class="bg-secondary text-white px-4 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider font-label-caps hover:scale-105 active:scale-95 transition-transform flex items-center gap-1">
+                    <span class="material-symbols-outlined text-sm">add</span> Add New Post
+                </button>
+            </div>
+
+            <!-- Blog Posts Table -->
+            <div class="overflow-x-auto mb-6">
+                <table class="w-full text-left text-sm text-gray-700">
+                    <thead class="text-xs uppercase bg-primary/5 text-primary border-b border-primary/10">
+                        <tr>
+                            <th class="px-6 py-3">Image</th>
+                            <th class="px-6 py-3">Title</th>
+                            <th class="px-6 py-3">Category</th>
+                            <th class="px-6 py-3">Date</th>
+                            <th class="px-6 py-3 text-right">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-primary/5">
+                        @forelse($blogPosts as $post)
+                            <tr class="hover:bg-primary/5 transition-colors">
+                                <td class="px-6 py-4">
+                                    <img src="{{ $post->image_url }}" class="w-12 h-12 object-cover rounded-lg border border-primary/10">
+                                </td>
+                                <td class="px-6 py-4 font-bold text-primary">{{ $post->title }}</td>
+                                <td class="px-6 py-4">{{ $post->category }}</td>
+                                <td class="px-6 py-4">{{ $post->created_at->format('M d, Y') }}</td>
+                                <td class="px-6 py-4 text-right">
+                                    <form action="{{ route('admin.blog.delete', $post->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this post?');" class="inline-block">
+                                        @csrf
+                                        <button type="submit" class="text-red-500 hover:text-red-700 font-bold text-xs uppercase tracking-wider font-label-caps">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        @empty
+                            <tr>
+                                <td colspan="5" class="px-6 py-8 text-center text-gray-500 italic">No blog posts registered yet.</td>
+                            </tr>
+                        @endforelse
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="mt-6">
+                {{ $blogPosts->appends(['donations' => $donationRecords->currentPage(), 'contacts' => $contactInquiries->currentPage(), 'products' => $productInquiries->currentPage()])->links() }}
+            </div>
+        </div>
+
     </section>
+
+    <!-- Create Blog Post Modal -->
+    <div id="create-blog-modal" class="fixed inset-0 bg-black/60 z-[100] flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-3xl max-w-2xl w-full p-8 shadow-2xl overflow-y-auto max-h-[90vh]">
+            <div class="flex justify-between items-center border-b border-primary/10 pb-4 mb-6">
+                <h3 class="font-display-xl text-xl font-extrabold text-primary uppercase">Create New Blog Post</h3>
+                <button onclick="document.getElementById('create-blog-modal').classList.add('hidden')" class="text-primary hover:text-secondary">
+                    <span class="material-symbols-outlined text-2xl font-bold">close</span>
+                </button>
+            </div>
+            
+            <form action="{{ route('admin.blog.store') }}" method="POST" class="space-y-4" autocomplete="off">
+                @csrf
+                <div>
+                    <label class="font-label-caps text-xs text-primary font-bold uppercase block mb-1">Title</label>
+                    <input name="title" type="text" required class="w-full bg-primary/5 border border-primary/10 focus:border-secondary transition-colors outline-none p-3 rounded-xl font-body-md" placeholder="e.g. Reforestation Drive in Aarey"/>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="font-label-caps text-xs text-primary font-bold uppercase block mb-1">Category</label>
+                        <select name="category" required class="w-full bg-primary/5 border border-primary/10 focus:border-secondary transition-colors outline-none p-3 rounded-xl font-body-md">
+                            <option value="Humanity & Health">Humanity & Health</option>
+                            <option value="Animal Welfare">Animal Welfare</option>
+                            <option value="Climate Action">Climate Action</option>
+                            <option value="Education">Education</option>
+                            <option value="Artisan Revival">Artisan Revival</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="font-label-caps text-xs text-primary font-bold uppercase block mb-1">Reading Time</label>
+                        <input name="reading_time" type="text" required class="w-full bg-primary/5 border border-primary/10 focus:border-secondary transition-colors outline-none p-3 rounded-xl font-body-md" placeholder="e.g. 4 min read"/>
+                    </div>
+                </div>
+                
+                <div>
+                    <label class="font-label-caps text-xs text-primary font-bold uppercase block mb-1">Image URL</label>
+                    <input name="image_url" type="text" required class="w-full bg-primary/5 border border-primary/10 focus:border-secondary transition-colors outline-none p-3 rounded-xl font-body-md" placeholder="https://..." value="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=800"/>
+                </div>
+                
+                <div>
+                    <label class="font-label-caps text-xs text-primary font-bold uppercase block mb-1">Summary</label>
+                    <textarea name="summary" required rows="2" class="w-full bg-primary/5 border border-primary/10 focus:border-secondary transition-colors outline-none p-3 rounded-xl font-body-md text-sm" placeholder="Brief summary of the blog post..."></textarea>
+                </div>
+                
+                <div>
+                    <label class="font-label-caps text-xs text-primary font-bold uppercase block mb-1">Content</label>
+                    <textarea name="content" required rows="6" class="w-full bg-primary/5 border border-primary/10 focus:border-secondary transition-colors outline-none p-3 rounded-xl font-body-md text-sm" placeholder="Detailed content..."></textarea>
+                </div>
+                
+                <div class="flex gap-4 pt-4 border-t border-primary/10">
+                    <button type="button" onclick="document.getElementById('create-blog-modal').classList.add('hidden')" class="flex-1 bg-gray-100 text-primary py-3.5 rounded-xl font-bold uppercase tracking-wider text-xs hover:bg-gray-200 transition-colors">
+                        Cancel
+                    </button>
+                    <button type="submit" class="flex-1 bg-secondary text-white py-3.5 rounded-xl font-bold uppercase tracking-wider text-xs hover:scale-105 active:scale-95 transition-transform">
+                        Publish Post
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
 </main>
 @endsection
 

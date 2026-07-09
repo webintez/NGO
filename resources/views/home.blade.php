@@ -7,56 +7,71 @@
 <section class="relative h-[90vh] w-full overflow-hidden">
     <!-- Admin Floating Edit Slide Controls -->
     @if(auth()->check())
-        <div class="absolute top-24 right-6 z-30 flex flex-col gap-2">
-            <button onclick="openInlineEditor(document.getElementById('slide-edit-1'))" class="bg-secondary text-white px-4 py-2.5 rounded-xl shadow-lg hover:scale-105 transition-transform flex items-center gap-2 font-label-caps text-xs uppercase font-bold">
-                <span class="material-symbols-outlined text-sm">photo_camera</span> Edit Slide 1
-            </button>
-            <button onclick="openInlineEditor(document.getElementById('slide-edit-2'))" class="bg-secondary text-white px-4 py-2.5 rounded-xl shadow-lg hover:scale-105 transition-transform flex items-center gap-2 font-label-caps text-xs uppercase font-bold">
-                <span class="material-symbols-outlined text-sm">photo_camera</span> Edit Slide 2
-            </button>
-            <button onclick="openInlineEditor(document.getElementById('slide-edit-3'))" class="bg-secondary text-white px-4 py-2.5 rounded-xl shadow-lg hover:scale-105 transition-transform flex items-center gap-2 font-label-caps text-xs uppercase font-bold">
-                <span class="material-symbols-outlined text-sm">photo_camera</span> Edit Slide 3
-            </button>
-            <button onclick="openInlineEditor(document.getElementById('slide-edit-4'))" class="bg-secondary text-white px-4 py-2.5 rounded-xl shadow-lg hover:scale-105 transition-transform flex items-center gap-2 font-label-caps text-xs uppercase font-bold">
-                <span class="material-symbols-outlined text-sm">photo_camera</span> Edit Slide 4
-            </button>
-            <button onclick="openInlineEditor(document.getElementById('slide-edit-5'))" class="bg-secondary text-white px-4 py-2.5 rounded-xl shadow-lg hover:scale-105 transition-transform flex items-center gap-2 font-label-caps text-xs uppercase font-bold">
-                <span class="material-symbols-outlined text-sm">photo_camera</span> Edit Slide 5
-            </button>
+        <div class="absolute top-24 right-6 z-30 flex flex-col gap-3 bg-white/90 backdrop-blur-md p-4 rounded-2xl border border-primary/10 shadow-2xl max-h-[70vh] overflow-y-auto">
+            <p class="font-label-caps text-[10px] text-primary font-bold text-center border-b border-primary/10 pb-2 mb-2">Edit Slide Elements</p>
+            @for ($i = 1; $i <= 5; $i++)
+                <div class="flex flex-col gap-1.5 border-b border-primary/5 pb-2 last:border-b-0 last:pb-0">
+                    <p class="text-[10px] font-bold text-secondary">SLIDE {{ $i }}</p>
+                    <div class="flex gap-1">
+                        <button onclick="openInlineEditor(document.getElementById('slide-img-{{ $i }}'))" class="bg-primary text-white px-2.5 py-1.5 rounded-lg shadow-sm hover:scale-[1.02] transition-all flex items-center gap-1 font-label-caps text-[9px] uppercase font-bold">
+                            <span class="material-symbols-outlined text-[12px]">photo_camera</span> Image
+                        </button>
+                        <button onclick="openInlineEditor(document.getElementById('slide-title-{{ $i }}'))" class="bg-primary text-white px-2.5 py-1.5 rounded-lg shadow-sm hover:scale-[1.02] transition-all flex items-center gap-1 font-label-caps text-[9px] uppercase font-bold">
+                            <span class="material-symbols-outlined text-[12px]">edit</span> Title
+                        </button>
+                        <button onclick="openInlineEditor(document.getElementById('slide-desc-{{ $i }}'))" class="bg-primary text-white px-2.5 py-1.5 rounded-lg shadow-sm hover:scale-[1.02] transition-all flex items-center gap-1 font-label-caps text-[9px] uppercase font-bold">
+                            <span class="material-symbols-outlined text-[12px]">edit_note</span> Text
+                        </button>
+                    </div>
+                </div>
+            @endfor
         </div>
         
         <!-- Hidden trigger hooks to pass parameters to the inline editor drawer -->
-        <div id="slide-edit-1" class="hidden" data-page="home" data-section="hero" data-key="image_1" data-type="image" data-label="Hero Slide 1 Image"></div>
-        <div id="slide-edit-2" class="hidden" data-page="home" data-section="hero" data-key="image_2" data-type="image" data-label="Hero Slide 2 Image"></div>
-        <div id="slide-edit-3" class="hidden" data-page="home" data-section="hero" data-key="image_3" data-type="image" data-label="Hero Slide 3 Image"></div>
-        <div id="slide-edit-4" class="hidden" data-page="home" data-section="hero" data-key="image_4" data-type="image" data-label="Hero Slide 4 Image"></div>
-        <div id="slide-edit-5" class="hidden" data-page="home" data-section="hero" data-key="image_5" data-type="image" data-label="Hero Slide 5 Image"></div>
+        @for ($i = 1; $i <= 5; $i++)
+            <div id="slide-img-{{ $i }}" class="hidden" data-page="home" data-section="hero" data-key="image_{{ $i }}" data-type="image" data-label="Hero Slide {{ $i }} Image"></div>
+            <div id="slide-title-{{ $i }}" class="hidden" data-page="home" data-section="hero" data-key="title_{{ $i }}" data-type="text" data-label="Hero Slide {{ $i }} Title"></div>
+            <div id="slide-desc-{{ $i }}" class="hidden" data-page="home" data-section="hero" data-key="desc_{{ $i }}" data-type="textarea" data-label="Hero Slide {{ $i }} Subtitle"></div>
+        @endfor
     @endif
 
     <!-- Slides Container -->
     <div id="hero-slider" class="absolute inset-0">
         <!-- Slide 1: Medical Camp -->
-        <div class="hero-slide absolute inset-0 opacity-100 transition-opacity duration-1000" {!! \App\Helpers\ContentHelper::editable('home', 'hero', 'image_1', 'image', 'Hero Slide 1 Image') !!} data-title="MEDICAL FACILITY & FREE CAMPS" data-subtitle="Providing free health checkups, wellness camps, medicines, and specialized diagnostic support to underprivileged communities.">
+        <div class="hero-slide absolute inset-0 opacity-100 transition-opacity duration-1000" 
+             data-title="{{ \App\Helpers\ContentHelper::get('home', 'hero', 'title_1', 'MEDICAL FACILITY & FREE CAMPS') }}" 
+             data-subtitle="{{ \App\Helpers\ContentHelper::get('home', 'hero', 'desc_1', 'Providing free health checkups, wellness camps, medicines, and specialized diagnostic support to underprivileged communities.') }}">
             <div class="absolute inset-0 bg-black/40 z-10 pointer-events-none"></div>
             <div class="w-full h-full bg-cover bg-center" style="background-image: url('{{ \App\Helpers\ContentHelper::get('home', 'hero', 'image_1', 'https://lh3.googleusercontent.com/aida-public/AB6AXuCNYt5H_fmaIDredC2R_u6F8nT668rWXFFPbninZkyaJcWRGU6wHp5TbL4f-87pClHNYbbg2rxnfJ4cdy4_xqL4Ydhpi1XDEnSdhEYrPzAEWM06vkkENc08rQo247H0egdmjZFG_Q5UMGNn355Um0b0IG3oi3KcnZjMyV0hkROgwNps3hLQaMlaJ9ns8dtWArT8RKUHEeJulOrrz2F864yknlemMLJQolzWk9U_cO8fidC68uv0A0GS') }}')"></div>
         </div>
         <!-- Slide 2: Traditional Arts & Crafts -->
-        <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000" {!! \App\Helpers\ContentHelper::editable('home', 'hero', 'image_2', 'image', 'Hero Slide 2 Image') !!} data-title="TRADITIONAL ARTS & CRAFTS OF INDIA" data-subtitle="Encouraging local artisans and reviving ancestral heritage through raw materials support, design workshops, and fair trade.">
+        <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000" 
+             data-title="{{ \App\Helpers\ContentHelper::get('home', 'hero', 'title_2', 'TRADITIONAL ARTS & CRAFTS OF INDIA') }}" 
+             data-subtitle="{{ \App\Helpers\ContentHelper::get('home', 'hero', 'desc_2', 'Encouraging local artisans and reviving ancestral heritage through raw materials support, design workshops, and fair trade.') }}">
             <div class="absolute inset-0 bg-black/40 z-10 pointer-events-none"></div>
             <div class="w-full h-full bg-cover bg-center" style="background-image: url('{{ \App\Helpers\ContentHelper::get('home', 'hero', 'image_2', 'https://lh3.googleusercontent.com/aida-public/AB6AXuBGrmxuABT4jn6qc7pXGm8kTi1BUJPnk8qtY3x4v-Kjma80ki0iRwy9aybU24pgYDeLzPDV66Y77zwQsilhb9P9HLgX8Xsn4-DQAFU8tR5t2p_ymtA_y6kl3SwGc0Fo8Ow19kn6Cuz9JAJsaZF9R89ojz4YYhgMasMbvKOx7E8k3M-cUbfvEN7ZOzGI098Uh7NNTTHLgkO54tA7qMLJB4qmGer5w6eQQe3qTqbh3lXKvVHIyWrpwqSP') }}')"></div>
         </div>
         <!-- Slide 3: Children Learning -->
-        <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000" {!! \App\Helpers\ContentHelper::editable('home', 'hero', 'image_3', 'image', 'Hero Slide 3 Image') !!} data-title="EDUCATION FOR UNDERPRIVILEGED CHILDREN" data-subtitle="Ensuring a brighter future with free schooling, classrooms, uniforms, study materials, and healthy nutrition packs.">
+        <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000" 
+             data-title="{{ \App\Helpers\ContentHelper::get('home', 'hero', 'title_3', 'EDUCATION FOR UNDERPRIVILEGED CHILDREN') }}" 
+             data-subtitle="{{ \App\Helpers\ContentHelper::get('home', 'hero', 'desc_3', 'Ensuring a brighter future with free schooling, classrooms, uniforms, study materials, and healthy nutrition packs.') }}">
             <div class="absolute inset-0 bg-black/40 z-10 pointer-events-none"></div>
             <div class="w-full h-full bg-cover bg-center" style="background-image: url('{{ \App\Helpers\ContentHelper::get('home', 'hero', 'image_3', 'https://lh3.googleusercontent.com/aida-public/AB6AXuAwkvnmMOCrxQOKH5ikxM3633PEI00ps2f_8R9tM8iA_7KRvRM4Fj4WbZHYiSxcSZbWEVceKhwRd7Sj3vryEKS35UDdojjGMSAz-cs8zA2OxAhoLgH3VgFiLQKJvcWRymAjq2TIT-jf-hAFz_y2DNSep9QzpSLxVVJE4eJYkr47H3mr5gSMTkZdtKpNl8xNt080fJJ7PzzBZJ-AZYJLpFlFuxFQeZJBlbatsRVIce2dLRuebbqNZWkb') }}')"></div>
         </div>
         <!-- Slide 4: Climate Change -->
-        <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000" {!! \App\Helpers\ContentHelper::editable('home', 'hero', 'image_4', 'image', 'Hero Slide 4 Image') !!} data-title="ENVIRONMENT & CLIMATE CHANGE ACTION" data-subtitle="Conducting street seminars, rainwater harvesting projects, river cleanups, and massive native afforestation drives.">
+        <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000" 
+             data-title="{{ \App\Helpers\ContentHelper::get('home', 'hero', 'title_4', 'ENVIRONMENT & CLIMATE CHANGE ACTION') }}" 
+             data-subtitle="{{ \App\Helpers\ContentHelper::get('home', 'hero', 'desc_4', 'Conducting street seminars, rainwater harvesting projects, river cleanups, and massive native afforestation drives.') }}">
             <div class="absolute inset-0 bg-black/40 z-10 pointer-events-none"></div>
             <div class="w-full h-full bg-cover bg-center" style="background-image: url('{{ \App\Helpers\ContentHelper::get('home', 'hero', 'image_4', 'https://lh3.googleusercontent.com/aida-public/AB6AXuBxOZh8VE7eYPCvSKjGXUn0Dsy7aZsJIwIszHaj5Hz_1Ow3ZJpyuSDq4azT-T-EiX6_gt8dp96XxT6tbWaeoll60UY8JPZnJJLxhMDqHVhb5Mb5Mum9NdFHyyV2bHbELZiEIWLTbJhRPbQBmN5Dzux8vHgyXqGYnIILySBSB_rNc2bcbv0QvboY5lfX3_qqd4iJmTUmVJgvbVtBQziMG6Iwr01qwqS6gelx29k5vkyMnYrU1zJ-1AqR') }}')"></div>
         </div>
         <!-- Slide 5: Adult Literacy -->
-        <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000" {!! \App\Helpers\ContentHelper::editable('home', 'hero', 'image_5', 'image', 'Hero Slide 5 Image') !!} data-title="ADULT LITERACY & VOCATIONAL TRAINING" data-subtitle="Empowering communities through basic education, health awareness lessons, and hands-on vocational upskilling.">
+        <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000" 
+             data-title="{{ \App\Helpers\ContentHelper::get('home', 'hero', 'title_5', 'ADULT LITERACY & VOCATIONAL TRAINING') }}" 
+             data-subtitle="{{ \App\Helpers\ContentHelper::get('home', 'hero', 'desc_5', 'Empowering communities through basic education, health awareness lessons, and hands-on vocational upskilling.') }}">
+            <div class="absolute inset-0 bg-black/40 z-10 pointer-events-none"></div>
+            <div class="w-full h-full bg-cover bg-center" style="background-image: url('{{ \App\Helpers\ContentHelper::get('home', 'hero', 'image_5', 'https://lh3.googleusercontent.com/aida-public/AB6AXuAXrgcd2jnXyJgxOpiQgtwBp9SFG7T8h007dfboaBmqP4tB_QdLUQHtmfvC1JyEOzkIf1p2r_vXfR2nGQqZxvSV29J8GHWShlbH1Q5MwOynkUiPtusR920uPu1uQUoq8ISHJvRVKp-FBcfWlSkjQpLKk5CMKlvyb-XiVq79FqRQls3MDZ3kx0TsiL0AgXKiV7_PZMiRnJ3_M-FOEZXcfrISunn90Sa1umPioY2dzfMVX9Itg0l881--') }}')"></div>
+        </div>
             <div class="absolute inset-0 bg-black/40 z-10 pointer-events-none"></div>
             <div class="w-full h-full bg-cover bg-center" style="background-image: url('{{ \App\Helpers\ContentHelper::get('home', 'hero', 'image_5', 'https://lh3.googleusercontent.com/aida-public/AB6AXuAXrgcd2jnXyJgxOpiQgtwBp9SFG7T8h007dfboaBmqP4tB_QdLUQHtmfvC1JyEOzkIf1p2r_vXfR2nGQqZxvSV29J8GHWShlbH1Q5MwOynkUiPtusR920uPu1uQUoq8ISHJvRVKp-FBcfWlSkjQpLKk5CMKlvyb-XiVq79FqRQls3MDZ3kx0TsiL0AgXKiV7_PZMiRnJ3_M-FOEZXcfrISunn90Sa1umPioY2dzfMVX9Itg0l881--') }}')"></div>
         </div>

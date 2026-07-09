@@ -30,4 +30,6 @@ Route::post('/admin/login', [AdminController::class, 'login'])->name('admin.logi
 Route::get('/admin', [AdminController::class, 'dashboard'])->name('admin.dashboard');
 Route::post('/admin/settings', [AdminController::class, 'updateSettings'])->name('admin.settings.update');
 Route::post('/admin/content/update', [AdminController::class, 'updateContentBlock'])->name('admin.content.update');
+Route::post('/admin/blog', [AdminController::class, 'storeBlogPost'])->name('admin.blog.store');
+Route::post('/admin/blog/{id}/delete', [AdminController::class, 'deleteBlogPost'])->name('admin.blog.delete');
 Route::post('/admin/logout', [AdminController::class, 'logout'])->name('admin.logout');

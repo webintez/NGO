@@ -255,40 +255,5 @@
         </div>
     </section>
 
-    <!-- Team Section -->
-    <section class="bg-surface-container py-24">
-        <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-            <div class="text-center mb-16">
-                <span class="font-label-caps text-secondary tracking-widest block mb-4 font-bold">MEET THE LEADERS</span>
-                <h2 class="font-headline-lg text-headline-lg-mobile text-primary font-bold">Our Global Team</h2>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter">
-                <div class="glass-card p-6 flex flex-col items-center text-center">
-                    <img class="w-32 h-32 rounded-full object-cover mb-6 border-4 border-secondary" src="{{ \App\Helpers\ContentHelper::get('about', 'team_1', 'img', 'https://lh3.googleusercontent.com/aida-public/AB6AXuCNYt5H_fmaIDredC2R_u6F8nT668rWXFFPbninZkyaJcWRGU6wHp5TbL4f-87pClHNYbbg2rxnfJ4cdy4_xqL4Ydhpi1XDEnSdhEYrPzAEWM06vkkENc08rQo247H0egdmjZFG_Q5UMGNn355Um0b0IG3oi3KcnZjMyV0hkROgwNps3hLQaMlaJ9ns8dtWArT8RKUHEeJulOrrz2F864yknlemMLJQolzWk9U_cO8fidC68uv0A0GS') }}" alt="Dr. Soma Sharma" {!! \App\Helpers\ContentHelper::editable('about', 'team_1', 'img', 'image', 'Leader 1 Image') !!}/>
-                    <h4 class="font-title-md text-primary font-bold mb-1" {!! \App\Helpers\ContentHelper::editable('about', 'team_1', 'name', 'text', 'Leader 1 Name') !!}>{{ \App\Helpers\ContentHelper::get('about', 'team_1', 'name', 'Dr. Soma Sharma') }}</h4>
-                    <p class="text-xs text-secondary font-bold uppercase tracking-wider mb-3" {!! \App\Helpers\ContentHelper::editable('about', 'team_1', 'role', 'text', 'Leader 1 Role') !!}>{{ \App\Helpers\ContentHelper::get('about', 'team_1', 'role', 'Founder & Director') }}</p>
-                    <p class="text-xs text-on-surface-variant" {!! \App\Helpers\ContentHelper::editable('about', 'team_1', 'bio', 'textarea', 'Leader 1 Bio') !!}>{{ \App\Helpers\ContentHelper::get('about', 'team_1', 'bio', 'Overseeing scientific mapping of environment and health grids.') }}</p>
-                </div>
-                <div class="glass-card p-6 flex flex-col items-center text-center">
-                    <img class="w-32 h-32 rounded-full object-cover mb-6 border-4 border-white/20" src="{{ \App\Helpers\ContentHelper::get('about', 'team_2', 'img', 'https://lh3.googleusercontent.com/aida-public/AB6AXuCNYt5H_fmaIDredC2R_u6F8nT668rWXFFPbninZkyaJcWRGU6wHp5TbL4f-87pClHNYbbg2rxnfJ4cdy4_xqL4Ydhpi1XDEnSdhEYrPzAEWM06vkkENc08rQo247H0egdmjZFG_Q5UMGNn355Um0b0IG3oi3KcnZjMyV0hkROgwNps3hLQaMlaJ9ns8dtWArT8RKUHEeJulOrrz2F864yknlemMLJQolzWk9U_cO8fidC68uv0A0GS') }}" alt="Prof. Amit Roy" {!! \App\Helpers\ContentHelper::editable('about', 'team_2', 'img', 'image', 'Leader 2 Image') !!}/>
-                    <h4 class="font-title-md text-primary font-bold mb-1" {!! \App\Helpers\ContentHelper::editable('about', 'team_2', 'name', 'text', 'Leader 2 Name') !!}>{{ \App\Helpers\ContentHelper::get('about', 'team_2', 'name', 'Prof. Amit Roy') }}</h4>
-                    <p class="text-xs text-secondary font-bold uppercase tracking-wider mb-3" {!! \App\Helpers\ContentHelper::editable('about', 'team_2', 'role', 'text', 'Leader 2 Role') !!}>{{ \App\Helpers\ContentHelper::get('about', 'team_2', 'role', 'Climate Co-ordinator') }}</p>
-                    <p class="text-xs text-on-surface-variant" {!! \App\Helpers\ContentHelper::editable('about', 'team_2', 'bio', 'textarea', 'Leader 2 Bio') !!}>{{ \App\Helpers\ContentHelper::get('about', 'team_2', 'bio', 'Directing Solar Aerator deployments and urban heat metrics.') }}</p>
-                </div>
-                <div class="glass-card p-6 flex flex-col items-center text-center">
-                    <img class="w-32 h-32 rounded-full object-cover mb-6 border-4 border-white/20" src="{{ \App\Helpers\ContentHelper::get('about', 'team_3', 'img', 'https://lh3.googleusercontent.com/aida-public/AB6AXuCNYt5H_fmaIDredC2R_u6F8nT668rWXFFPbninZkyaJcWRGU6wHp5TbL4f-87pClHNYbbg2rxnfJ4cdy4_xqL4Ydhpi1XDEnSdhEYrPzAEWM06vkkENc08rQo247H0egdmjZFG_Q5UMGNn355Um0b0IG3oi3KcnZjMyV0hkROgwNps3hLQaMlaJ9ns8dtWArT8RKUHEeJulOrrz2F864yknlemMLJQolzWk9U_cO8fidC68uv0A0GS') }}" alt="Sarah D'Souza" {!! \App\Helpers\ContentHelper::editable('about', 'team_3', 'img', 'image', 'Leader 3 Image') !!}/>
-                    <h4 class="font-title-md text-primary font-bold mb-1" {!! \App\Helpers\ContentHelper::editable('about', 'team_3', 'name', 'text', 'Leader 3 Name') !!}>{{ \App\Helpers\ContentHelper::get('about', 'team_3', 'name', "Sarah D'Souza") }}</h4>
-                    <p class="text-xs text-secondary font-bold uppercase tracking-wider mb-3" {!! \App\Helpers\ContentHelper::editable('about', 'team_3', 'role', 'text', 'Leader 3 Role') !!}>{{ \App\Helpers\ContentHelper::get('about', 'team_3', 'role', 'Humanity Camps Lead') }}</p>
-                    <p class="text-xs text-on-surface-variant" {!! \App\Helpers\ContentHelper::editable('about', 'team_3', 'bio', 'textarea', 'Leader 3 Bio') !!}>{{ \App\Helpers\ContentHelper::get('about', 'team_3', 'bio', 'Managing bridging schools setups and diagnostics distributions.') }}</p>
-                </div>
-                <div class="glass-card p-6 flex flex-col items-center text-center">
-                    <img class="w-32 h-32 rounded-full object-cover mb-6 border-4 border-white/20" src="{{ \App\Helpers\ContentHelper::get('about', 'team_4', 'img', 'https://lh3.googleusercontent.com/aida-public/AB6AXuCNYt5H_fmaIDredC2R_u6F8nT668rWXFFPbninZkyaJcWRGU6wHp5TbL4f-87pClHNYbbg2rxnfJ4cdy4_xqL4Ydhpi1XDEnSdhEYrPzAEWM06vkkENc08rQo247H0egdmjZFG_Q5UMGNn355Um0b0IG3oi3KcnZjMyV0hkROgwNps3hLQaMlaJ9ns8dtWArT8RKUHEeJulOrrz2F864yknlemMLJQolzWk9U_cO8fidC68uv0A0GS') }}" alt="Dr. Kunal Sen" {!! \App\Helpers\ContentHelper::editable('about', 'team_4', 'img', 'image', 'Leader 4 Image') !!}/>
-                    <h4 class="font-title-md text-primary font-bold mb-1" {!! \App\Helpers\ContentHelper::editable('about', 'team_4', 'name', 'text', 'Leader 4 Name') !!}>{{ \App\Helpers\ContentHelper::get('about', 'team_4', 'name', 'Dr. Kunal Sen') }}</h4>
-                    <p class="text-xs text-secondary font-bold uppercase tracking-wider mb-3" {!! \App\Helpers\ContentHelper::editable('about', 'team_4', 'role', 'text', 'Leader 4 Role') !!}>{{ \App\Helpers\ContentHelper::get('about', 'team_4', 'role', 'Chief Stray Vet') }}</p>
-                    <p class="text-xs text-on-surface-variant" {!! \App\Helpers\ContentHelper::editable('about', 'team_4', 'bio', 'textarea', 'Leader 4 Bio') !!}>{{ \App\Helpers\ContentHelper::get('about', 'team_4', 'bio', 'Performing life saving stray surgeries and handling vaccination drives.') }}</p>
-                </div>
-            </div>
-        </div>
-    </section>
 </main>
 @endsection
