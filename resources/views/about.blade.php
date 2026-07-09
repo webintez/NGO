@@ -15,48 +15,7 @@
 
 @section('content')
 <main class="pt-10">
-    <!-- Hero Section: Founder Narrative -->
-    <section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-24">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div class="relative">
-                <div class="glass-card rounded-[2rem] overflow-hidden p-4 rotate-3 transform transition-transform hover:rotate-0 duration-500">
-                    <img class="w-full aspect-square object-cover rounded-[1.5rem]" src="{{ \App\Helpers\ContentHelper::get('about', 'founder', 'img', 'https://lh3.googleusercontent.com/aida-public/AB6AXuC424L1ndM-_hVAwCO4zMi4i7CAIJtfB9RDzdl2-FmM1r_3p63d1nDusUhZkSxLlPegD6ODS_GDjsqbFMgWlBBT4MX4fGuPjDWGDnpNouzNBfEyjy4Sq-YXJt0NMBT2S8Zl8nZu-79NIT0_zvck4qm_uDIB3z3l5QAbQNtbfR0bW0drokUw8yv76vixPpSTxodyyAWBnsww93IN4AN2u1TUdBitYjg1vyPxv-Bf4t-mJaGyvBdQ48G8') }}" alt="Dr. Soma Basu Sharma" {!! \App\Helpers\ContentHelper::editable('about', 'founder', 'img', 'image', 'Founder Image') !!}/>
-                </div>
-                <div class="absolute -bottom-8 -right-8 w-48 h-48 bg-secondary/20 blur-3xl rounded-full"></div>
-            </div>
-            <div class="space-y-8">
-                <div>
-                    <span class="font-label-caps text-label-caps text-secondary tracking-[0.2em] mb-4 block font-bold" {!! \App\Helpers\ContentHelper::editable('about', 'founder', 'title', 'text', 'Founder Section Title') !!}>{{ \App\Helpers\ContentHelper::get('about', 'founder', 'title', 'OUR VISIONARY FOUNDER') }}</span>
-                    <h1 class="font-headline-lg text-headline-lg-mobile md:text-5xl font-extrabold text-primary mb-6" {!! \App\Helpers\ContentHelper::editable('about', 'founder', 'name', 'text', 'Founder Name') !!}>{{ \App\Helpers\ContentHelper::get('about', 'founder', 'name', 'Dr. Soma Basu Sharma') }}</h1>
-                    <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed italic text-indigo-900 font-semibold" {!! \App\Helpers\ContentHelper::editable('about', 'vision', 'description', 'textarea', 'Vision Quote') !!}>
-                        "{{ \App\Helpers\ContentHelper::get('about', 'vision', 'description', 'The idea is to leave the world at least same, if not better than what we received.') }}"
-                    </p>
-                </div>
-                <div class="space-y-4 font-body-md text-body-md text-on-surface text-gray-700">
-                    <p {!! \App\Helpers\ContentHelper::editable('about', 'founder', 'bio', 'textarea', 'Founder Biography') !!}>{{ \App\Helpers\ContentHelper::get('about', 'founder', 'bio', 'Dr. Soma Basu Sharma is a visionary leader, environment scientist, and child activist based in Royal Palms, Mumbai. She dedicated her life to building community structures that merge modern sciences with empathy.') }}</p>
-                </div>
-                <div class="flex gap-4">
-                    <div class="glass-card px-6 py-4 rounded-2xl flex flex-col items-center justify-center flex-1">
-                        <span class="font-headline-lg text-headline-lg-mobile text-secondary font-extrabold">15+</span>
-                        <span class="font-label-caps text-label-caps text-on-surface-variant font-bold">Years Active</span>
-                    </div>
-                    <div class="glass-card px-6 py-4 rounded-2xl flex flex-col items-center justify-center flex-1">
-                        <span class="font-headline-lg text-headline-lg-mobile text-secondary font-extrabold">124k</span>
-                        <span class="font-label-caps text-label-caps text-on-surface-variant font-bold">Lives Impacted</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Divider -->
-    <div class="my-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-        <div class="rainbow-divider">
-            <div class="peace-icon-anchor">
-                <span class="material-symbols-outlined text-secondary text-3xl">public</span>
-            </div>
-        </div>
-    </div>
 
     <!-- Section: Our Vision for a Better World -->
     <section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-24 animate-content">

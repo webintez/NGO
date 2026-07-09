@@ -165,8 +165,8 @@ class DatabaseSeeder extends Seeder
             ['page' => 'about', 'section' => 'vision', 'element_key' => 'title', 'type' => 'text', 'value' => 'Universal Peace Council'],
             ['page' => 'about', 'section' => 'vision', 'element_key' => 'description', 'type' => 'textarea', 'value' => 'Idea is to leave the world at least same, if not better than what we received.'],
             ['page' => 'about', 'section' => 'founder', 'element_key' => 'title', 'type' => 'text', 'value' => 'Visionary Founder'],
-            ['page' => 'about', 'section' => 'founder', 'element_key' => 'name', 'type' => 'text', 'value' => 'Dr. Soma Basu Sharma'],
-            ['page' => 'about', 'section' => 'founder', 'element_key' => 'bio', 'type' => 'textarea', 'value' => 'Dr. Soma Basu Sharma is a visionary leader, environment scientist, and child activist based in Royal Palms, Mumbai. She dedicated her life to building community structures that merge modern sciences with empathy.'],
+            ['page' => 'about', 'section' => 'founder', 'element_key' => 'name', 'type' => 'text', 'value' => 'Founder'],
+            ['page' => 'about', 'section' => 'founder', 'element_key' => 'bio', 'type' => 'textarea', 'value' => 'Our founder is a visionary leader, environment scientist, and child activist based in Royal Palms, Mumbai.'],
             ['page' => 'about', 'section' => 'founder', 'element_key' => 'img', 'type' => 'image', 'value' => 'https://lh3.googleusercontent.com/aida-public/AB6AXuC424L1ndM-_hVAwCO4zMi4i7CAIJtfB9RDzdl2-FmM1r_3p63d1nDusUhZkSxLlPegD6ODS_GDjsqbFMgWlBBT4MX4fGuPjDWGDnpNouzNBfEyjy4Sq-YXJt0NMBT2S8Zl8nZu-79NIT0_zvck4qm_uDIB3z3l5QAbQNtbfR0bW0drokUw8yv76vixPpSTxodyyAWBnsww93IN4AN2u1TUdBitYjg1vyPxv-Bf4t-mJaGyvBdQ48G8'],
             
             // About Initiatives

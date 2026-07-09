@@ -141,7 +141,7 @@
                             <h5 class="font-title-md text-primary font-bold text-sm">Donor Information</h5>
                             <div>
                                 <label class="font-label-caps text-[9px] text-gray-600 block mb-1 font-bold">FULL NAME</label>
-                                <input name="name" class="w-full bg-white/40 border-b-2 border-primary py-2 px-3 focus:border-secondary focus:ring-0 outline-none transition-all rounded-lg text-sm" placeholder="Dr. Soma Basu" type="text" required/>
+                                <input name="name" class="w-full bg-white/40 border-b-2 border-primary py-2 px-3 focus:border-secondary focus:ring-0 outline-none transition-all rounded-lg text-sm" placeholder="Aarav Mehta" type="text" required/>
                             </div>
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div>
